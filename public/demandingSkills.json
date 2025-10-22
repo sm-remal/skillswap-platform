@@ -1,0 +1,110 @@
+[
+  {
+    "skillId": 1,
+    "skillName": "Spoken English Practice",
+    "providerName": "Sara Hossain",
+    "providerEmail": "sara@skillswap.com",
+    "price": 12,
+    "rating": 4.9,
+    "slotsAvailable": 5,
+    "description": "Conversational English sessions for non-native speakers to improve fluency.",
+    "image": "https://i.pinimg.com/736x/a7/74/5e/a7745e535b9c544b1cd6116b76cd8767.jpg",
+    "category": "Language"
+  },
+  {
+    "skillId": 2,
+    "skillName": "Fullstack Web Development",
+    "providerName": "Tasrif Khan",
+    "providerEmail": "imran@skillswap.com",
+    "price": 35,
+    "rating": 4.8,
+    "slotsAvailable": 4,
+    "description": "Learn front-end and back-end development using React, Node.js, and MongoDB.",
+    "image": "https://i.pinimg.com/1200x/52/19/d9/5219d9b3f4606ed553479e91b2b9b8d2.jpg",
+    "category": "Programming"
+  },
+  {
+    "skillId": 3,
+    "skillName": "Digital Marketing Essentials",
+    "providerName": "Nadia Rahman",
+    "providerEmail": "nadia@skillswap.com",
+    "price": 20,
+    "rating": 4.6,
+    "slotsAvailable": 6,
+    "description": "Learn SEO, social media marketing, email campaigns, and content strategy.",
+    "image": "https://i.pinimg.com/736x/34/b1/62/34b162561f96089aef194886da15bfa7.jpg",
+    "category": "Marketing"
+  },
+  {
+    "skillId": 4,
+    "skillName": "UI/UX Design Fundamentals",
+    "providerName": "Ravi Kumar",
+    "providerEmail": "ravi@skillswap.com",
+    "price": 25,
+    "rating": 4.7,
+    "slotsAvailable": 3,
+    "description": "Learn user interface and user experience design using Figma and Adobe XD.",
+    "image": "https://i.pinimg.com/736x/f1/95/40/f1954067d34f18878a621f676c822f94.jpg",
+    "category": "Design"
+  },
+  {
+    "skillId": 5,
+    "skillName": "Beginner Guitar Lessons",
+    "providerName": "Alex Martin",
+    "providerEmail": "alex@skillswap.com",
+    "price": 18,
+    "rating": 4.5,
+    "slotsAvailable": 4,
+    "description": "Acoustic guitar classes for complete beginners with easy-to-follow lessons.",
+    "image": "https://i.pinimg.com/1200x/78/1a/2b/781a2b1d483f5772e80fa821b6e49699.jpg",
+    "category": "Music"
+  },
+  {
+    "skillId": 6,
+    "skillName": "Python Programming for Beginners",
+    "providerName": "Farhan Ahmed",
+    "providerEmail": "farhan@skillswap.com",
+    "price": 28,
+    "rating": 4.7,
+    "slotsAvailable": 5,
+    "description": "Introduction to Python programming with practical examples and exercises.",
+    "image": "https://i.pinimg.com/736x/11/09/f8/1109f8710d4c2ea968811abd207a19c6.jpg",
+    "category": "Programming"
+  },
+  {
+    "skillId": 7,
+    "skillName": "Photography Basics",
+    "providerName": "Arif Siddique",
+    "providerEmail": "arif@skillswap.com",
+    "price": 22,
+    "rating": 4.6,
+    "slotsAvailable": 6,
+    "description": "Learn how to take professional-looking photos with any camera or smartphone.",
+    "image": "https://i.pinimg.com/1200x/68/e5/5f/68e55f135254113567847e74790c6434.jpg",
+    "category": "Photography"
+  },
+  {
+    "skillId": 8,
+    "skillName": "Video Editing",
+    "providerName": "Lina Chowdhury",
+    "providerEmail": "lina@skillswap.com",
+    "price": 18,
+    "rating": 4.5,
+    "slotsAvailable": 5,
+    "description": "Learn video editing techniques using tools like Premiere Pro and Final Cut Pro.",
+    "image": "https://i.pinimg.com/736x/25/5c/8b/255c8be87fe55516cde3e94be920a335.jpg",
+    "category": "Design"
+  },
+  {
+    "skillId": 9,
+    "skillName": "Public Speaking & Presentation Skills",
+    "providerName": "Mehedi Hasan",
+    "providerEmail": "mehedi@skillswap.com",
+    "price": 18,
+    "rating": 5.0,
+    "slotsAvailable": 4,
+    "description": "Improve your public speaking, confidence, and presentation techniques.",
+    "image": "https://i.pinimg.com/1200x/7d/fe/f6/7dfef69a895b8917b65e3421a7b0289f.jpg",
+    "category": "Personal Development"
+  }
+]
