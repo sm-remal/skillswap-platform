@@ -6,6 +6,7 @@ import MyProfile from '../pages/MyProfile/MyProfile';
 import AuthLayout from '../layouts/AuthLayout';
 import Login from '../pages/Login/Login';
 import SignUp from '../pages/SignUp/SignUp';
+import SkillsDetails from '../pages/SkillsDetails/SkillsDetails';
 
 
 export const router = createBrowserRouter([
@@ -17,6 +18,11 @@ export const router = createBrowserRouter([
         index: true,
         Component: Home,
         loader: () => fetch("/demandingSkills.json")
+      },
+      {
+        path: "/skill-details/:id",
+        loader: () => fetch("/demandingSkills.json"),
+        Component: SkillsDetails,
       },
       {
         path: "my-profile",

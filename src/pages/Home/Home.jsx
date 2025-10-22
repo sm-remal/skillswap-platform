@@ -4,6 +4,7 @@ import { useLoaderData } from 'react-router';
 import SkillCards from '../../components/SkillCards/SkillCards';
 import TopRatedProviders from '../../components/TopRatedProviders/TopRatedProviders';
 import HowItWorks from '../../components/HowItWorks/HowItWorks';
+import WhyLearnWithUs from '../../components/WhyLearnWithUs/WhyLearnWithUs';
 
 const Home = () => {
     const demandingSkills = useLoaderData();
@@ -33,6 +34,10 @@ const Home = () => {
                 {/* How It Works  */}
 
             <HowItWorks></HowItWorks>
+
+            <WhyLearnWithUs></WhyLearnWithUs>
+                
+
         </div>
     );
 };
