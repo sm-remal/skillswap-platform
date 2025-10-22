@@ -27,21 +27,29 @@ export const router = createBrowserRouter([
       {
         path: "my-profile",
         Component: MyProfile,
-      }
-    ]
-  },
-  {
-    path: "auth",
-    Component: AuthLayout,
-    children: [
+      },
       {
-        path: "/auth/login",
+        path: "login",
         Component: Login,
       },
       {
-        path: "/auth/signup",
+        path: "signup",
         Component: SignUp,
       }
     ]
-  }
+  },
+  // {
+  //   path: "auth",
+  //   Component: AuthLayout,
+  //   children: [
+  //     {
+  //       path: "/auth/login",
+  //       Component: Login,
+  //     },
+  //     {
+  //       path: "/auth/signup",
+  //       Component: SignUp,
+  //     }
+  //   ]
+  // }
 ]);
