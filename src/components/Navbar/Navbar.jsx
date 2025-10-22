@@ -1,8 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaUserCircle } from 'react-icons/fa';
-import { Link, NavLink } from 'react-router'; 
+import { Link, NavLink } from 'react-router';
+import { AuthContext } from '../../contexts/AuthContext';
+import toast from 'react-hot-toast';
 
 const Navbar = () => {
+
+  const { user, signOutUser } = useContext(AuthContext);
+  console.log(user)
+
+  const handleSignout = () => {
+    signOutUser()
+      .then(() => {
+        toast.success("Signout successful");
+        // setUser(null);
+      })
+      .catch((e) => {
+        toast.error(e.message);
+      });
+  };
+
   return (
     <div
       className="shadow-xs sticky top-0 z-50"
@@ -11,7 +28,7 @@ const Navbar = () => {
       }}
     >
       <div className="navbar max-w-screen-2xl m-auto max-xl:max-w-7xl max-lg:max-w-5xl max-md:max-w-3xl max-sm:max-w-screen-sm text-gray-800">
-        
+
         {/* Left */}
         <div className="navbar-start">
           <div className="dropdown">
@@ -44,19 +61,27 @@ const Navbar = () => {
 
         {/*  Right */}
         <div className="navbar-end gap-3">
-          <FaUserCircle size={28} className="text-gray-700" />
-          <Link
-            to="/login"
-            className="px-4 py-2 rounded-md bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold hover:scale-105 hover:shadow-md transition-all duration-300"
-          >
-            Login
-          </Link>
-          <Link
-            to="/signup"
-            className="px-4 py-2 rounded-md bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold hover:scale-105 hover:shadow-md transition-all duration-300"
-          >
-            Sign Up
-          </Link>
+
+          {/* User Avatar with title */}
+
+          {user && (<img src={user.photoURL || "https://cdn-icons-png.flaticon.com/512/149/149071.png"} alt="User Avatar" title={user.displayName || "User"} className="w-9 h-9 rounded-full border-2 border-purple-500 cursor-pointer" />)
+          }
+
+          {/* Login / Logout Buttons */}
+          {user ? (
+            <Link to="/login" 
+            onClick={handleSignout} 
+            className="px-4 py-2 rounded-md bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold hover:scale-105 hover:shadow-md transition-all duration-300">Sign Out</Link>)
+
+            : (<div className="flex gap-3">
+
+              <Link to="/login"
+                className="px-4 py-2 rounded-md bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold hover:scale-105 hover:shadow-md transition-all duration-300">Login</Link>
+
+              <Link to="/signup" className="px-4 py-2 rounded-md bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold hover:scale-105 hover:shadow-md transition-all duration-300"> Sign Up </Link>
+              
+            </div>
+            )}
         </div>
       </div>
     </div>

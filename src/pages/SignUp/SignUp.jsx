@@ -1,6 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
+import { AuthContext } from '../../contexts/AuthContext';
+import { getFriendlyMessage } from '../../errorMessage/errorMessage';
+import toast from 'react-hot-toast';
+
+
 
 const SignUp = () => {
 
@@ -8,16 +13,20 @@ const SignUp = () => {
     const [error, setError] = useState("")
     const [showPassword, setShowPassword] = useState(false)
 
+    const { createUser, updateUserProfile, setUser } = useContext(AuthContext)
+
+    const navigate = useNavigate()
+
 
 
     const handleRegister = (event) => {
         event.preventDefault();
-        const name = event.target.name.value;
+        const displayName = event.target.name.value;
         const photoURL = event.target.photoURL.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
         const trams = event.target.trams.checked;
-        console.log(name, photoURL, email, password, trams)
+        // console.log(name, photoURL, email, password, trams)
 
         // Password validation 
         const atLeast6character = /^[\S\s]{6,}$/;
@@ -37,6 +46,40 @@ const SignUp = () => {
             setError("Please accept our trams and condition!")
             return;
         }
+
+        // Create User 
+
+        createUser(email, password)
+            .then(res => {
+                updateUserProfile(displayName, photoURL)
+                    .then(() => {
+                        console.log(res);
+                        // setLoading(false);
+                        toast.success("Signup successful")
+                        setUser(null);
+                        setSuccess(true)
+                        navigate("/")
+
+                    })
+                    .catch(error => {
+                        const friendlyMessage = getFriendlyMessage(error.code)
+                        console.log(friendlyMessage)
+                        setError(friendlyMessage)
+                    })
+
+            })
+            .catch(error => {
+                const friendlyMessage = getFriendlyMessage(error.code)
+                // console.log(friendlyMessage)
+                setError(friendlyMessage)
+            })
+
+
+
+
+
+
+
 
     }
 
@@ -85,7 +128,7 @@ const SignUp = () => {
                     </fieldset>
                 </form>
                 <div className='text-center'>
-                    <p className='font-medium text-gray-700'>Already have an account? Please <Link to="/auth/login" className='text-secondary underline'>Login</Link></p>
+                    <p className='font-medium text-gray-700'>Already have an account? Please <Link to="/login" className='text-secondary underline'>Login</Link></p>
                 </div>
             </div>
         </div>
