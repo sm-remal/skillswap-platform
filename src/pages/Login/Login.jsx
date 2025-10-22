@@ -4,11 +4,13 @@ import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../../contexts/AuthContext';
 import { getFriendlyMessage } from '../../errorMessage/errorMessage';
 import toast from 'react-hot-toast';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 
 const Login = () => {
     const [success, setSuccess] = useState(false)
     const [error, setError] = useState("")
+    const [showPassword, setShowPassword] = useState(false)
 
     const { userLogin, googleSignIn, forgetPassword } = useContext(AuthContext)
 
@@ -73,7 +75,7 @@ const Login = () => {
             })
     }
 
-   
+
 
 
 
@@ -86,12 +88,20 @@ const Login = () => {
                 <form onSubmit={handleLogin}>
                     <fieldset className="fieldset">
 
+                        {/* Email  */}
                         <label className="label">Email</label>
-                        <input type="email" ref={emailRef} name='email' className="input" placeholder="Email" />
+                        <input type="email" ref={emailRef} name='email' className="input w-full" placeholder="Email" />
 
+                        {/* Password  */}
                         <label className="label">Password</label>
-                        <input type="password" name='password' className="input" placeholder="Password" />
+                        <div className='relative'>
+                            <input type={`${showPassword ? "text" : "password"}`} name='password' className="input w-full" required placeholder="Password" />
+                            <div onClick={() => setShowPassword(!showPassword)} className='absolute top-3 right-4 text-gray-500 cursor-pointer' >
+                                {showPassword ? <FaEye size={18} /> : <FaEyeSlash size={18} />}
+                            </div>
+                        </div>
 
+                        {/* Forget Password  */}
                         <div onClick={handleForgetPassword}><a className="link link-hover">Forgot password?</a></div>
 
                         {

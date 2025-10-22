@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useLoaderData, useParams } from 'react-router';
 import { FaStar, FaEnvelope, FaUser } from "react-icons/fa";
 import { Toaster, toast } from 'react-hot-toast';
+import ErrorDetailsPage from '../../components/ErrorPage/ErrorDetailsPage';
 
 const SkillsDetails = () => {
   const { id } = useParams();
@@ -16,15 +17,11 @@ const SkillsDetails = () => {
   };
 
   if (!skill) {
-    return (
-      <p className="text-center text-red-500 mt-10 text-lg md:text-2xl font-bold">
-        Skill not found!
-      </p>
-    );
+    return <ErrorDetailsPage></ErrorDetailsPage>
   }
 
   return (   
-      <div data-aos="zoom-in" className="max-w-xl mx-auto bg-white shadow-lg rounded-xl overflow-hidden my-8 hover:shadow-blue-300 transition-shadow duration-300">
+      <div className="max-w-xl mx-auto bg-white shadow-lg rounded-xl overflow-hidden my-8 transition-shadow duration-300">
       <Toaster position="top-center" />
 
       {/* Image Section */}
@@ -73,10 +70,12 @@ const SkillsDetails = () => {
             <input
               type="text"
               placeholder="Your Name"
+              required
               className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"/>
             <input
               type="email"
               placeholder="Your Email"
+              required
               className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"/>
 
             {/* Buttons */}

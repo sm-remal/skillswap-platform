@@ -73,14 +73,6 @@ const SignUp = () => {
                 // console.log(friendlyMessage)
                 setError(friendlyMessage)
             })
-
-
-
-
-
-
-
-
     }
 
     return (

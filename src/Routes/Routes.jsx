@@ -3,15 +3,19 @@ import { createBrowserRouter } from "react-router";
 import HomeLayout from '../layouts/HomeLayout';
 import Home from '../pages/Home/Home';
 import MyProfile from '../pages/MyProfile/MyProfile';
-import AuthLayout from '../layouts/AuthLayout';
 import Login from '../pages/Login/Login';
 import SignUp from '../pages/SignUp/SignUp';
 import SkillsDetails from '../pages/SkillsDetails/SkillsDetails';
+import PrivateRoute from './PrivateRoute';
+import ErrorPage from '../components/ErrorPage/ErrorPage';
+import Loading from '../components/Loading/Loading';
 
 
 export const router = createBrowserRouter([
   {
     path: "/",
+    hydrateFallbackElement: <Loading></Loading>,
+    errorElement: <ErrorPage></ErrorPage>,
     Component: HomeLayout,
     children: [
       {
@@ -22,7 +26,9 @@ export const router = createBrowserRouter([
       {
         path: "/skill-details/:id",
         loader: () => fetch("/demandingSkills.json"),
-        Component: SkillsDetails,
+        element: <PrivateRoute>
+          <SkillsDetails></SkillsDetails>
+        </PrivateRoute>
       },
       {
         path: "my-profile",
