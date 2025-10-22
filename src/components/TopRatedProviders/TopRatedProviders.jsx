@@ -6,7 +6,7 @@ import "aos/dist/aos.css";
 const TopRatedProviders = () => {
   useEffect(() => {
     AOS.init({
-      duration: 1400,
+      duration: 1200,
       once: true, 
       easing: "ease-in-out", 
     });

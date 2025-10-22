@@ -3,6 +3,7 @@ import HeroSlider from '../../components/HeroSlider/HeroSlider';
 import { useLoaderData } from 'react-router';
 import SkillCards from '../../components/SkillCards/SkillCards';
 import TopRatedProviders from '../../components/TopRatedProviders/TopRatedProviders';
+import HowItWorks from '../../components/HowItWorks/HowItWorks';
 
 const Home = () => {
     const demandingSkills = useLoaderData();
@@ -29,6 +30,9 @@ const Home = () => {
             <TopRatedProviders></TopRatedProviders>
 
 
+                {/* How It Works  */}
+
+            <HowItWorks></HowItWorks>
         </div>
     );
 };

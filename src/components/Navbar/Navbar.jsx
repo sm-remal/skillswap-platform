@@ -12,7 +12,7 @@ const Navbar = () => {
     >
       <div className="navbar max-w-screen-2xl m-auto max-xl:max-w-7xl max-lg:max-w-5xl max-md:max-w-3xl max-sm:max-w-screen-sm text-gray-800">
         
-        {/* ✅ Left */}
+        {/* Left */}
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden text-gray-700">
@@ -34,7 +34,7 @@ const Navbar = () => {
           </h2>
         </div>
 
-        {/* ✅ Center */}
+        {/* Center */}
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 text-gray-800 font-semibold">
             <li><NavLink to="/" className={({ isActive }) => isActive ? "text-blue-600 font-bold" : ""}>Home</NavLink></li>
@@ -42,7 +42,7 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* ✅ Right */}
+        {/*  Right */}
         <div className="navbar-end gap-3">
           <FaUserCircle size={28} className="text-gray-700" />
           <Link
