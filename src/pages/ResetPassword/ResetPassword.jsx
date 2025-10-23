@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useLocation } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 import { getFriendlyMessage } from "../../errorMessage/errorMessage";
 
 const ResetPassword = () => {
@@ -30,7 +30,8 @@ const ResetPassword = () => {
         forgetPassword(email)
             .then(res => {
                 console.log(res)
-                toast.success("Password reset email sent! Check your inbox 💌");
+                window.open("https://mail.google.com", "_blank");
+                // toast.success("Password reset email sent! Check your inbox ");
             })
 
             .catch(err => {
@@ -40,7 +41,7 @@ const ResetPassword = () => {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-linear-to-br from-blue-100 via-purple-100 to-pink-100">
+        <div className="flex items-center justify-center min-h-screen bg-linear-to-br from-blue-100 via-purple-100 to-pink-100 px-4 md:px-0">
             <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
                 <h2 className="text-2xl font-bold mb-6 text-center text-violet-600">Reset Password</h2>
                 <form onSubmit={handleForgetPassword}>

@@ -40,7 +40,7 @@ const MyProfile = () => {
         
         {/* ===== Left Side ===== */}
         <div className="w-full md:w-1/3 flex flex-col items-center">
-          {/* Title */}
+          
           <h2 className="text-2xl font-bold text-indigo-600 mb-6">
             Update Profile
           </h2>

@@ -6,7 +6,7 @@ import "aos/dist/aos.css";
 const TopRatedProviders = () => {
   useEffect(() => {
     AOS.init({
-      duration: 1200,
+      duration: 1000,
       once: true, 
       easing: "ease-in-out", 
     });
@@ -39,7 +39,7 @@ const TopRatedProviders = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-blue-50/40">
+    <section className="py-16 bg-linear-to-b from-white to-blue-50/40">
       {/*  Section Title */}
       <div className="text-center max-w-2xl mx-auto mb-12" data-aos="zoom-in">
         <h2 className="text-3xl font-extrabold text-blue-600">
@@ -99,7 +99,7 @@ const TopRatedProviders = () => {
             </div>
 
             {/*  View Button */}
-            <button className="w-full mt-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold hover:from-purple-600 hover:to-pink-500 shadow-md hover:shadow-lg hover:scale-[1.03] transition-all duration-300">
+            <button className="w-full mt-4 py-2 rounded-lg bg-linear-to-r from-blue-500 to-purple-600 text-white font-semibold hover:from-purple-600 hover:to-pink-500 shadow-md hover:shadow-lg hover:scale-[1.03] transition-all duration-300">
               View Profile →
             </button>
           </div>

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
-import { Link, useNavigate } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../contexts/AuthContext';
 import { getFriendlyMessage } from '../../errorMessage/errorMessage';
 import toast from 'react-hot-toast';
@@ -10,10 +10,16 @@ const Login = () => {
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState("");
     const [showPassword, setShowPassword] = useState(false);
-    const [email, setEmail] = useState(""); // ✅ Track email state
+    const [email, setEmail] = useState(""); 
+
+
+    const location = useLocation()
+    const navigate = useNavigate();
+
+
 
     const { userLogin, googleSignIn } = useContext(AuthContext);
-    const navigate = useNavigate();
+    
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -28,9 +34,9 @@ const Login = () => {
                 console.log(res.user)
                 setSuccess(true);
                 event.target.reset();
-                setEmail(""); // Clear email after login
+                setEmail(""); 
                 toast.success("Login successful 🎉");
-                navigate("/");
+                navigate(`${location.state ? location.state : "/"}`)
             })
             .catch(error => {
                 const friendlyMessage = getFriendlyMessage(error.code);
@@ -45,7 +51,8 @@ const Login = () => {
                 console.log(res.user)
                 setSuccess(true);
                 toast.success("Login successful 🎉");
-                navigate("/");
+                navigate(`${location.state ? location.state : "/"}`)
+
             })
             .catch(error => {
                 const friendlyMessage = getFriendlyMessage(error.code);
@@ -99,7 +106,7 @@ const Login = () => {
                             <div>
                                 <Link
                                     to="/reset-password"
-                                    state={{ email }} // ✅ Pass email to ResetPassword
+                                    state={{ email }} //Pass email to ResetPassword
                                     className="link link-hover text-purple-700 hover:text-pink-600"
                                 >
                                     Forgot password?
@@ -107,7 +114,7 @@ const Login = () => {
                             </div>
 
                             {/* Success/Error */}
-                            {success && <p className="text-green-600 mt-2 font-medium">✅ Logged in successfully!</p>}
+                            {success && <p className="text-green-600 mt-2 font-medium"> Logged in successfully!</p>}
                             {error && <p className="text-red-600 mt-2 font-medium">⚠️ {error}</p>}
 
                             {/* Login Button */}
@@ -134,7 +141,7 @@ const Login = () => {
                         <p className='font-medium text-gray-700'>
                             Don't have an account?{" "}
                             <Link to="/signup" className='text-purple-700 hover:text-pink-600 underline font-semibold'>
-                                Register
+                                Sign Up
                             </Link>
                         </p>
                     </div>
@@ -145,5 +152,3 @@ const Login = () => {
 };
 
 export default Login;
-
-

@@ -21,8 +21,8 @@ const SkillsDetails = () => {
   }
 
   return (
-    <div className='bg-linear-to-br from-blue-100 via-purple-100 to-pink-100'>
-      <div className="max-w-xl mx-auto bg-white shadow-lg rounded-xl overflow-hidden my-8 transition-shadow duration-300">
+    <div className='bg-linear-to-br from-blue-100 via-purple-100 to-pink-100 px-4 md:px-0 py-8 md:py-20'>
+      <div className="max-w-xl mx-auto bg-white shadow-lg rounded-xl overflow-hidden transition-shadow duration-300">
         <Toaster position="top-center" />
 
         {/* Image Section */}
@@ -41,7 +41,7 @@ const SkillsDetails = () => {
 
           <div className="flex justify-between items-start sm:items-center pt-2 border-t border-gray-200 text-sm">
             <p className="text-blue-600 font-semibold">
-              💰 Price: ${skill.price}
+              💰 Price: {skill.price} Tk
             </p>
             <p className="text-gray-500">
               Slots Available: <span className="font-semibold">{skill.slotsAvailable}</span>
@@ -83,11 +83,11 @@ const SkillsDetails = () => {
               <div className="flex gap-2 mt-2">
                 <button
                   type="submit"
-                  className="flex-1 bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-bold px-4 py-2 rounded-lg shadow-md hover:opacity-90 transition duration-200 text-sm">
+                  className="flex-1 bg-linear-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-bold px-4 py-2 rounded-lg shadow-md hover:opacity-90 transition duration-200 text-sm cursor-pointer">
                   Book Session
                 </button>
                 <Link to="/"
-                  className="flex-1 bg-gradient-to-r from-pink-500 via-purple-600 to-blue-500 text-white font-bold px-4 py-2 rounded-lg shadow-md hover:opacity-90 transition duration-200 text-sm">← Go Back</Link>
+                  className="flex-1 bg-linear-to-r from-pink-500 via-purple-600 to-blue-500 text-white font-bold px-4 py-2 rounded-lg shadow-md hover:opacity-90 transition duration-200 text-sm text-center">← Go Back</Link>
               </div>
             </form>
           </div>
