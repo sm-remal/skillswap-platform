@@ -3,6 +3,7 @@ import { Link, useLoaderData, useParams } from 'react-router';
 import { FaStar, FaEnvelope, FaUser } from "react-icons/fa";
 import { Toaster, toast } from 'react-hot-toast';
 import ErrorDetailsPage from '../../components/ErrorPage/ErrorDetailsPage';
+import { TbCurrencyTaka } from 'react-icons/tb';
 
 const SkillsDetails = () => {
   const { id } = useParams();
@@ -34,14 +35,18 @@ const SkillsDetails = () => {
 
           <div className="flex items-center text-yellow-500 text-sm">
             <FaStar className="mr-1" />
+            <FaStar className="mr-1" />
+            <FaStar className="mr-1" />
+            <FaStar className="mr-1" />
+            <FaStar className="mr-1" />
             <span className="font-semibold text-gray-700">{skill.rating}</span>
           </div>
 
           <p className="text-gray-600 text-sm">{skill.description}</p>
 
           <div className="flex justify-between items-start sm:items-center pt-2 border-t border-gray-200 text-sm">
-            <p className="text-blue-600 font-semibold">
-              💰 Price: {skill.price} Tk
+            <p className="text-blue-600 font-semibold flex">
+               Price: <TbCurrencyTaka size={20} className='ml-2'/>{skill.price}
             </p>
             <p className="text-gray-500">
               Slots Available: <span className="font-semibold">{skill.slotsAvailable}</span>
