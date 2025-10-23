@@ -44,7 +44,7 @@ const WhyLearnWithUs = () => {
               spaceBetween: 20,
             },
           }}
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          autoplay={{ delay: 2000, disableOnInteraction: false }}
           pagination={{ clickable: true }}
           loop={true}
           className="pb-10"

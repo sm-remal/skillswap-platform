@@ -46,7 +46,7 @@ const SignUp = () => {
                     .then(() => {
                         console.log(res.user)
                         toast.success("SignUp Successful");
-                        setUser(null);
+                        setUser(res.user);
                         setSuccess(true);
                         navigate("/");
                     })

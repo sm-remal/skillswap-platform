@@ -40,7 +40,7 @@ const SkillCards = ({ skills }) => {
 
         {/*  View Details */}
         <Link to={`/skill-details/${skillId}`}>
-          <button className="w-full mt-2 py-2 rounded-lg bg-linear-to-r from-blue-500 to-purple-600 text-white font-semibold hover:from-purple-600 hover:to-pink-500 shadow-md hover:shadow-lg hover:scale-[1.03] transition-all duration-300">
+          <button className="w-full mt-2 py-2 rounded-lg bg-linear-to-r from-blue-500 to-purple-600 text-white font-semibold hover:from-purple-600 hover:to-pink-500 shadow-md hover:shadow-lg hover:scale-[1.03] transition-all duration-300 cursor-pointer">
             View Details →
           </button>
         </Link>
