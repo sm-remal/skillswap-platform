@@ -11,15 +11,19 @@ const Home = () => {
     console.log(demandingSkills)
     return (
         <div className='max-w-screen-2xl m-auto max-xl:max-w-7xl max-lg:max-w-5xl max-md:max-w-3xl max-sm:max-w-screen-sm'>
+
+            {/* Hero Section  */}
             <HeroSlider></HeroSlider>
-            <div className='flex flex-col space-x-4 text-center max-w-3xl mx-auto mt-10 space-y-3'>
+
+
+            <div className='flex flex-col space-x-4 text-center max-w-4xl mx-auto mt-10 space-y-3 px-4'>
                 <h2 className=" text-4xl font-extrabold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">Popular Skills</h2>
-                <p className='text-gray-500 font-medium'>We have designed our courses with the most demanding professional skills. The knowledge, <br/>experience, and expertise gained through the program will ensure your desired job in the global market.<br/> From the list below you can enroll to any online or offline courses at any time.</p>
+                <p className='text-gray-500 font-medium'>We have designed our courses with the most demanding professional skills. The knowledge, <br className='hidden md:flex'/>experience, and expertise gained through the program will ensure your desired job in the global market.<br className='hidden md:flex'/> From the list below you can enroll to any online or offline courses at any time.</p>
             </div>
 
             {/* Popular Skills Card  */}
 
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-6 my-10'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-6 my-10 px-4'>
                 {
                     demandingSkills.map(skills => <SkillCards key={skills.skillId} skills={skills}></SkillCards>)
                 }

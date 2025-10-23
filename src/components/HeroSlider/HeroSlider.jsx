@@ -12,7 +12,7 @@ import uiux from '../../assets/uiux.jpg'
 const HeroSlider = () => {
   return (
     <div
-      className="flex flex-col md:flex-row justify-center md:gap-14 items-center md:h-[550px] px-10"
+      className="flex flex-col md:flex-row justify-center gap-10 md:gap-0 items-center md:h-[550px] px-4 md:px-10 py-10"
       style={{
         background: "linear-gradient(135deg, #c2e9fb 0%, #a1c4fd 25%, #cfd9df 50%, #d4c1ec 75%, #fbc2eb 100%)"
       }}

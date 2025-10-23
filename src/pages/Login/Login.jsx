@@ -6,122 +6,145 @@ import { getFriendlyMessage } from '../../errorMessage/errorMessage';
 import toast from 'react-hot-toast';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
-
 const Login = () => {
-    const [success, setSuccess] = useState(false)
-    const [error, setError] = useState("")
-    const [showPassword, setShowPassword] = useState(false)
+    const [success, setSuccess] = useState(false);
+    const [error, setError] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
 
-    const { userLogin, googleSignIn, forgetPassword } = useContext(AuthContext)
-
-    const emailRef = useRef()
-    const navigate = useNavigate()
+    const { userLogin, googleSignIn, forgetPassword } = useContext(AuthContext);
+    const emailRef = useRef();
+    const navigate = useNavigate();
 
     const handleLogin = (event) => {
         event.preventDefault();
-
         const email = event.target.email.value;
         const password = event.target.password.value;
 
-        // console.log(email, password)
+        setSuccess("");
+        setError("");
 
-        setSuccess("")
-        setError("")
-
-        // User Login 
+        // Login 
         userLogin(email, password)
             .then(res => {
-                console.log(res)
-                setSuccess(true)
+                console.log(res.user)
+                setSuccess(true);
                 event.target.reset();
-                toast.success("Login successful 🎉")
-
-                navigate(`${location.state ? location.state : "/"}`)
+                toast.success("Login successful 🎉");
+                navigate(`${location.state ? location.state : "/"}`);
             })
             .catch(error => {
-                const friendlyMessage = getFriendlyMessage(error.code)
-                console.log(friendlyMessage)
-                setError(friendlyMessage)
-            })
-    }
-    // Google SignIn 
+                const friendlyMessage = getFriendlyMessage(error.code);
+                setError(friendlyMessage);
+            });
+    };
+
+    // Login With Google 
     const handleLoginWithGoogle = () => {
         googleSignIn()
             .then(res => {
-                console.log(res)
-                setSuccess(true)
-                toast.success("Login successful 🎉")
-                navigate(`${location.state ? location.state : "/"}`)
+                console.log(res.user)
+                setSuccess(true);
+                toast.success("Login successful 🎉");
+                navigate(`${location.state ? location.state : "/"}`);
             })
             .catch(error => {
-                const friendlyMessage = getFriendlyMessage(error.code)
-                console.log(friendlyMessage)
-                setError(friendlyMessage)
-            })
-    }
+                const friendlyMessage = getFriendlyMessage(error.code);
+                setError(friendlyMessage);
+            });
+    };
 
-    // Forget password 
+    // Forget Password 
     const handleForgetPassword = () => {
         const email = emailRef.current.value;
         forgetPassword(email)
             .then(result => {
                 console.log(result)
-                toast.error("Password reset email sent! Check your inbox 💌")
+                toast.error("Password reset email sent! Check your inbox 💌");
             })
             .catch(error => {
-                const friendlyMessage = getFriendlyMessage(error.code)
-                console.log(friendlyMessage)
-                setError(friendlyMessage)
-            })
-    }
-
-
-
-
+                const friendlyMessage = getFriendlyMessage(error.code);
+                setError(friendlyMessage);
+            });
+    };
 
     return (
-        <div className="card bg-base-100 w-full mx-auto max-w-sm shrink-0 shadow-2xl my-14">
-            <div className="card-body">
-                <div className='flex justify-center'>
-                    <h1 className="text-2xl text-gray-700 font-semibold">Login Your Account</h1>
-                </div>
-                <form onSubmit={handleLogin}>
-                    <fieldset className="fieldset">
+        <div className="min-h-screen flex items-center justify-center bg-linear-to-r from-blue-300 via-purple-300 to-pink-300 px-4">
+            <div className="card bg-white/90 backdrop-blur-md w-full max-w-sm shadow-2xl rounded-2xl my-14 border border-purple-200">
+                <div className="card-body">
+                    <div className='flex justify-center mb-4'>
+                        <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-linear-to-r from-indigo-700 via-purple-700 to-pink-600 text-center">
+                            Login to Your Account
+                        </h1>
+                    </div>
 
-                        {/* Email  */}
-                        <label className="label">Email</label>
-                        <input type="email" ref={emailRef} name='email' className="input w-full" placeholder="Email" />
+                    <form onSubmit={handleLogin}>
+                        <fieldset className="fieldset space-y-3">
 
-                        {/* Password  */}
-                        <label className="label">Password</label>
-                        <div className='relative'>
-                            <input type={`${showPassword ? "text" : "password"}`} name='password' className="input w-full" required placeholder="Password" />
-                            <div onClick={() => setShowPassword(!showPassword)} className='absolute top-3 right-4 text-gray-500 cursor-pointer' >
-                                {showPassword ? <FaEye size={18} /> : <FaEyeSlash size={18} />}
+                            {/* Email */}
+                            <label className="label text-gray-800 font-medium">Email</label>
+                            <input
+                                type="email"
+                                ref={emailRef}
+                                name="email"
+                                className="input w-full border border-purple-300 placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-purple-500"
+                                placeholder="Enter your email"
+                            />
+
+                            {/* Password */}
+                            <label className="label text-gray-800 font-medium">Password</label>
+                            <div className="relative">
+                                <input
+                                    type={`${showPassword ? "text" : "password"}`}
+                                    name="password"
+                                    className="input w-full border border-purple-300 placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-purple-500"
+                                    required
+                                    placeholder="Enter your password"
+                                />
+                                <div
+                                    onClick={() => setShowPassword(!showPassword)}
+                                    className="absolute top-3 right-4 text-gray-600 cursor-pointer hover:text-purple-600 transition"
+                                >
+                                    {showPassword ? <FaEye size={18} /> : <FaEyeSlash size={18} />}
+                                </div>
                             </div>
-                        </div>
 
-                        {/* Forget Password  */}
-                        <div onClick={handleForgetPassword}><a className="link link-hover">Forgot password?</a></div>
+                            {/* Forget Password */}
+                            <div onClick={handleForgetPassword}>
+                                <a className="link link-hover text-purple-700 hover:text-pink-600">Forgot password?</a>
+                            </div>
 
-                        {
-                            success && <p className='text-green-600'>Logged in successfully!</p>
-                        }
+                            {/* Success/Error */}
+                            {success && <p className="text-green-600 mt-2 font-medium">✅ Logged in successfully!</p>}
+                            {error && <p className="text-red-600 mt-2 font-medium">⚠️ {error}</p>}
 
-                        {
-                            error && <p className='text-red-600'>{error}</p>
+                            {/* Login Button */}
+                            <button className="btn w-full bg-linear-to-r from-indigo-600 to-pink-600 hover:from-indigo-700 hover:to-pink-700 text-white font-semibold mt-4 shadow-md hover:shadow-lg transition-all duration-300">
+                                Login
+                            </button>
+                        </fieldset>
+                    </form>
 
-                        }
+                    <div className='divider text-gray-400'>or</div>
 
-                        <button className="btn btn-neutral bg-gray-800 mt-4">Login</button>
-                    </fieldset>
-                </form>
-                <div className='divider text-gray-400'>or</div>
-                <div className='space-y-3 '>
-                    <button onClick={handleLoginWithGoogle} className='btn w-full btn-outline'> <FcGoogle size={20} /> Login with Google</button>
-                </div>
-                <div className='text-center'>
-                    <p className='font-medium text-gray-700'>Don't have an account? <Link to="/signup" className='text-secondary underline'>Register</Link></p>
+                    {/* Google Login */}
+                    <div className='space-y-3'>
+                        <button
+                            onClick={handleLoginWithGoogle}
+                            className="btn w-full btn-outline border-purple-400 text-purple-700 hover:bg-purple-100 hover:border-purple-500 transition"
+                        >
+                            <FcGoogle size={20} className="mr-2" /> Login with Google
+                        </button>
+                    </div>
+
+                    {/* Bottom Link */}
+                    <div className='text-center mt-4'>
+                        <p className='font-medium text-gray-700'>
+                            Don't have an account?{" "}
+                            <Link to="/signup" className='text-purple-700 hover:text-pink-600 underline font-semibold'>
+                                Register
+                            </Link>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
