@@ -46,7 +46,7 @@ const Navbar = () => {
               <li><NavLink to="/my-profile" className="font-semibold text-gray-800">My Profile</NavLink></li>
             </ul>
           </div>
-          <h2 className="text-xl font-extrabold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
+          <h2 className="text-xl font-extrabold bg-linear-to-r from-blue-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
             SkillSwap
           </h2>
         </div>
@@ -71,14 +71,14 @@ const Navbar = () => {
           {user ? (
             <Link to="/login" 
             onClick={handleSignout} 
-            className="px-4 py-2 rounded-md bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold hover:scale-105 hover:shadow-md transition-all duration-300">Sign Out</Link>)
+            className="px-4 py-2 rounded-md bg-linear-to-r from-blue-500 to-purple-600 text-white font-semibold hover:scale-105 hover:shadow-md transition-all duration-300">Sign Out</Link>)
 
             : (<div className="flex gap-3">
 
               <Link to="/login"
-                className="px-4 py-2 rounded-md bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold hover:scale-105 hover:shadow-md transition-all duration-300">Login</Link>
+                className="px-3 py-2 md:px-4 md:py-2 rounded-md bg-linear-to-r from-blue-500 to-purple-600 text-white font-semibold hover:scale-105 hover:shadow-md transition-all duration-300">Login</Link>
 
-              <Link to="/signup" className="px-4 py-2 rounded-md bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold hover:scale-105 hover:shadow-md transition-all duration-300"> Sign Up </Link>
+              <Link to="/signup" className="px-3 py-2 md:px-4 md:py-2 rounded-md bg-linear-to-r from-pink-500 to-purple-600 text-white font-semibold hover:scale-105 hover:shadow-md transition-all duration-300"> Sign Up </Link>
               
             </div>
             )}

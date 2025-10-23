@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../../contexts/AuthContext';
@@ -10,17 +10,16 @@ const Login = () => {
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState("");
     const [showPassword, setShowPassword] = useState(false);
+    const [email, setEmail] = useState(""); // ✅ Track email state
 
-    const { userLogin, googleSignIn, forgetPassword } = useContext(AuthContext);
-    const emailRef = useRef();
+    const { userLogin, googleSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const handleLogin = (event) => {
         event.preventDefault();
-        const email = event.target.email.value;
         const password = event.target.password.value;
 
-        setSuccess("");
+        setSuccess(false);
         setError("");
 
         // Login 
@@ -29,8 +28,9 @@ const Login = () => {
                 console.log(res.user)
                 setSuccess(true);
                 event.target.reset();
+                setEmail(""); // Clear email after login
                 toast.success("Login successful 🎉");
-                navigate(`${location.state ? location.state : "/"}`);
+                navigate("/");
             })
             .catch(error => {
                 const friendlyMessage = getFriendlyMessage(error.code);
@@ -45,21 +45,7 @@ const Login = () => {
                 console.log(res.user)
                 setSuccess(true);
                 toast.success("Login successful 🎉");
-                navigate(`${location.state ? location.state : "/"}`);
-            })
-            .catch(error => {
-                const friendlyMessage = getFriendlyMessage(error.code);
-                setError(friendlyMessage);
-            });
-    };
-
-    // Forget Password 
-    const handleForgetPassword = () => {
-        const email = emailRef.current.value;
-        forgetPassword(email)
-            .then(result => {
-                console.log(result)
-                toast.error("Password reset email sent! Check your inbox 💌");
+                navigate("/");
             })
             .catch(error => {
                 const friendlyMessage = getFriendlyMessage(error.code);
@@ -84,7 +70,8 @@ const Login = () => {
                             <label className="label text-gray-800 font-medium">Email</label>
                             <input
                                 type="email"
-                                ref={emailRef}
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                                 name="email"
                                 className="input w-full border border-purple-300 placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-purple-500"
                                 placeholder="Enter your email"
@@ -109,8 +96,14 @@ const Login = () => {
                             </div>
 
                             {/* Forget Password */}
-                            <div onClick={handleForgetPassword}>
-                                <a className="link link-hover text-purple-700 hover:text-pink-600">Forgot password?</a>
+                            <div>
+                                <Link
+                                    to="/reset-password"
+                                    state={{ email }} // ✅ Pass email to ResetPassword
+                                    className="link link-hover text-purple-700 hover:text-pink-600"
+                                >
+                                    Forgot password?
+                                </Link>
                             </div>
 
                             {/* Success/Error */}
@@ -152,3 +145,5 @@ const Login = () => {
 };
 
 export default Login;
+
+

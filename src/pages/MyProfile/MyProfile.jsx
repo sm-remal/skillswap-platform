@@ -35,7 +35,7 @@ const MyProfile = () => {
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 p-6">
+    <div className="min-h-screen flex justify-center items-center bg-linear-to-br from-blue-100 via-purple-100 to-pink-100 p-6">
       <div className="max-w-5xl w-full bg-white rounded-2xl shadow-xl p-8 flex flex-col md:flex-row gap-10">
         
         {/* ===== Left Side ===== */}

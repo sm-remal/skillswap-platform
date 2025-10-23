@@ -9,6 +9,7 @@ import SkillsDetails from '../pages/SkillsDetails/SkillsDetails';
 import PrivateRoute from './PrivateRoute';
 import ErrorPage from '../components/ErrorPage/ErrorPage';
 import Loading from '../components/Loading/Loading';
+import ResetPassword from '../pages/ResetPassword/ResetPassword';
 
 
 export const router = createBrowserRouter([
@@ -43,6 +44,10 @@ export const router = createBrowserRouter([
       {
         path: "signup",
         Component: SignUp,
+      },
+      {
+        path: "reset-password",
+        Component: ResetPassword,
       }
     ]
   },
