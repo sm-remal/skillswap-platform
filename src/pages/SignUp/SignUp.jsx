@@ -125,7 +125,7 @@ const SignUp = () => {
                                     placeholder="Enter a strong password"/>
                                 <div
                                     onClick={() => setShowPassword(!showPassword)}
-                                    className="absolute right-3 cursor-pointer text-gray-600 hover:text-purple-600 transition">
+                                    className="absolute right-3 cursor-pointer text-gray-600">
                                     {showPassword ? <FaEye size={18} /> : <FaEyeSlash size={18} />}
                                 </div>
                             </div>

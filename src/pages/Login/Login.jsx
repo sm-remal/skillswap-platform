@@ -94,7 +94,7 @@ const Login = () => {
                                     placeholder="Enter your password"/>
                                 <div
                                     onClick={() => setShowPassword(!showPassword)}
-                                    className="absolute top-3 right-4 text-gray-600 cursor-pointer hover:text-purple-600 transition">
+                                    className="absolute top-3 right-4 text-gray-600 cursor-pointer">
                                     {showPassword ? <FaEye size={18} /> : <FaEyeSlash size={18} />}
                                 </div>
                             </div>

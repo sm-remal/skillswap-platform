@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useLocation } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
-// import toast from "react-hot-toast";
+import toast from "react-hot-toast";
 import { getFriendlyMessage } from "../../errorMessage/errorMessage";
 
 const ResetPassword = () => {
@@ -28,15 +28,18 @@ const ResetPassword = () => {
         }
 
         forgetPassword(email)
-            .then(res => {
-                console.log(res)
-                window.open("https://mail.google.com", "_blank");
-                // toast.success("Password reset email sent! Check your inbox ");
+            .then(() => {
+                toast.success("Password reset email sent! Check your inbox ");
+                // console.log(res)
+                setTimeout(() => {
+                    window.open("https://mail.google.com", "_blank");
+                }, 1000);
             })
 
-            .catch(err => {
-                const friendlyMessage = getFriendlyMessage(err.code);
+            .catch(error => {
+                const friendlyMessage = getFriendlyMessage(error.code);
                 setError(friendlyMessage);
+                // console.log(error)
             })
     };
 
@@ -53,14 +56,14 @@ const ResetPassword = () => {
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="Enter your email"
                             className="w-full p-2 border border-gray-300 rounded"
-                            required/>
+                            required />
                     </div>
 
                     {error && <p className="text-red-500 mb-2">{error}</p>}
 
                     <button
                         type="submit"
-                        className="w-full mt-2 py-2 cursor-pointer rounded-lg bg-linear-to-r from-blue-500 to-purple-600 text-white font-semibold hover:from-purple-600 hover:to-pink-500 shadow-md hover:shadow-lg hover:scale-[1.03] transition-all duration-300">
+                        className="w-full mt-2 py-2 cursor-pointer rounded-lg bg-linear-to-r from-blue-500 to-purple-600 text-white font-semibold hover:from-purple-600 hover:to-pink-500 shadow-md hover:shadow-md">
                         Reset Password
                     </button>
                 </form>
