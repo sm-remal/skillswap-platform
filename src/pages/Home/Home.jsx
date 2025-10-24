@@ -39,6 +39,8 @@ const Home = () => {
 
             <HowItWorks></HowItWorks>
 
+                {/* Why Learn With Us  */}
+                
             <WhyLearnWithUs></WhyLearnWithUs>
                 
 

@@ -28,7 +28,7 @@ const Login = () => {
         setSuccess(false);
         setError("");
 
-        // Login 
+        // Login With Email and Password
         userLogin(email, password)
             .then(res => {
                 console.log(res.user)
@@ -61,7 +61,7 @@ const Login = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-linear-to-r from-blue-300 via-purple-300 to-pink-300 px-4">
+        <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-100 via-purple-100 to-pink-100 px-4">
             <div className="card bg-white/90 backdrop-blur-md w-full max-w-sm shadow-2xl rounded-2xl my-14 border border-purple-200">
                 <div className="card-body">
                     <div className='flex justify-center mb-4'>
@@ -81,8 +81,7 @@ const Login = () => {
                                 onChange={(e) => setEmail(e.target.value)}
                                 name="email"
                                 className="input w-full border border-purple-300 placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-purple-500"
-                                placeholder="Enter your email"
-                            />
+                                placeholder="Enter your email"/>
 
                             {/* Password */}
                             <label className="label text-gray-800 font-medium">Password</label>
@@ -92,12 +91,10 @@ const Login = () => {
                                     name="password"
                                     className="input w-full border border-purple-300 placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-purple-500"
                                     required
-                                    placeholder="Enter your password"
-                                />
+                                    placeholder="Enter your password"/>
                                 <div
                                     onClick={() => setShowPassword(!showPassword)}
-                                    className="absolute top-3 right-4 text-gray-600 cursor-pointer hover:text-purple-600 transition"
-                                >
+                                    className="absolute top-3 right-4 text-gray-600 cursor-pointer hover:text-purple-600 transition">
                                     {showPassword ? <FaEye size={18} /> : <FaEyeSlash size={18} />}
                                 </div>
                             </div>
@@ -107,8 +104,7 @@ const Login = () => {
                                 <Link
                                     to="/reset-password"
                                     state={{ email }} //Pass email to ResetPassword
-                                    className="link link-hover text-purple-700 hover:text-pink-600"
-                                >
+                                    className="link link-hover text-purple-700 hover:text-pink-600">
                                     Forgot password?
                                 </Link>
                             </div>
@@ -130,8 +126,7 @@ const Login = () => {
                     <div className='space-y-3'>
                         <button
                             onClick={handleLoginWithGoogle}
-                            className="btn w-full btn-outline border-purple-400 text-purple-700 hover:bg-purple-100 hover:border-purple-500 transition"
-                        >
+                            className="btn w-full btn-outline border-purple-400 text-purple-700 hover:bg-purple-100 hover:border-purple-500 transition">
                             <FcGoogle size={20} className="mr-2" /> Login with Google
                         </button>
                     </div>

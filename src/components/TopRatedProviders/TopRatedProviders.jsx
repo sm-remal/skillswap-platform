@@ -90,8 +90,7 @@ const TopRatedProviders = () => {
                     i < Math.round(provider.rating)
                       ? "text-yellow-400"
                       : "text-gray-300"
-                  }
-                />
+                  }/>
               ))}
               <span className="text-gray-600 text-sm ml-1">
                 {provider.rating.toFixed(1)}

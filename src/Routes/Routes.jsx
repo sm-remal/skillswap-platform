@@ -51,18 +51,5 @@ export const router = createBrowserRouter([
       }
     ]
   },
-  // {
-  //   path: "auth",
-  //   Component: AuthLayout,
-  //   children: [
-  //     {
-  //       path: "/auth/login",
-  //       Component: Login,
-  //     },
-  //     {
-  //       path: "/auth/signup",
-  //       Component: SignUp,
-  //     }
-  //   ]
-  // }
+  
 ]);

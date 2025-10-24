@@ -53,16 +53,14 @@ const ResetPassword = () => {
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="Enter your email"
                             className="w-full p-2 border border-gray-300 rounded"
-                            required
-                        />
+                            required/>
                     </div>
 
                     {error && <p className="text-red-500 mb-2">{error}</p>}
 
                     <button
                         type="submit"
-                        className="w-full mt-2 py-2 cursor-pointer rounded-lg bg-linear-to-r from-blue-500 to-purple-600 text-white font-semibold hover:from-purple-600 hover:to-pink-500 shadow-md hover:shadow-lg hover:scale-[1.03] transition-all duration-300"
-                    >
+                        className="w-full mt-2 py-2 cursor-pointer rounded-lg bg-linear-to-r from-blue-500 to-purple-600 text-white font-semibold hover:from-purple-600 hover:to-pink-500 shadow-md hover:shadow-lg hover:scale-[1.03] transition-all duration-300">
                         Reset Password
                     </button>
                 </form>

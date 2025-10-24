@@ -45,7 +45,7 @@ const SignUp = () => {
                 updateUserProfile(displayName, photoURL)
                     .then(() => {
                         console.log(res.user)
-                        toast.success("SignUp Successful");
+                        toast.success("SignUp Successful 🎉");
                         setUser(res.user);
                         setSuccess(true);
                         navigate("/");
@@ -76,7 +76,7 @@ const SignUp = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-linear-to-r from-blue-300 via-purple-300 to-pink-300 px-4">
+        <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-100 via-purple-100 to-pink-100 px-4">
             <div className="card bg-white/90 backdrop-blur-md w-full max-w-sm shadow-2xl rounded-2xl my-16 border border-purple-200">
                 <div className="card-body">
                     {/* Heading */}
@@ -95,8 +95,7 @@ const SignUp = () => {
                                 name="name"
                                 className="input w-full border border-purple-300 placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-purple-500 px-4"
                                 required
-                                placeholder="Enter your name"
-                            />
+                                placeholder="Enter your name"/>
 
                             {/* Photo URL */}
                             <label className="label text-gray-800 font-medium">Photo URL</label>
@@ -104,8 +103,7 @@ const SignUp = () => {
                                 type="text"
                                 name="photoURL"
                                 className="input w-full border border-purple-300 placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-purple-500 px-4"
-                                placeholder="Paste your photo link"
-                            />
+                                placeholder="Paste your photo link"/>
 
                             {/* Email */}
                             <label className="label text-gray-800 font-medium">Email Address</label>
@@ -114,8 +112,7 @@ const SignUp = () => {
                                 name="email"
                                 className="input w-full border border-purple-300 placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-purple-500 px-4"
                                 required
-                                placeholder="example@email.com"
-                            />
+                                placeholder="example@email.com"/>
 
                             {/* Password */}
                             <label className="label text-gray-800 font-medium">Password</label>
@@ -125,12 +122,10 @@ const SignUp = () => {
                                     name="password"
                                     className="input w-full border border-purple-300 placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-purple-500 pr-12 px-4"
                                     required
-                                    placeholder="Enter a strong password"
-                                />
+                                    placeholder="Enter a strong password"/>
                                 <div
                                     onClick={() => setShowPassword(!showPassword)}
-                                    className="absolute right-3 cursor-pointer text-gray-600 hover:text-purple-600 transition"
-                                >
+                                    className="absolute right-3 cursor-pointer text-gray-600 hover:text-purple-600 transition">
                                     {showPassword ? <FaEye size={18} /> : <FaEyeSlash size={18} />}
                                 </div>
                             </div>
@@ -142,8 +137,8 @@ const SignUp = () => {
                             </label>
 
                             {/* Messages */}
-                            {success && <p className="text-green-600 mt-2 font-medium">✅ Account created successfully! You can now log in.</p>}
-                            {error && <p className="text-red-600 mt-2 font-medium">⚠️ {error}</p>}
+                            {success && <p className="text-green-600 mt-2 font-medium"> Account created successfully! You can now log in.</p>}
+                            {error && <p className="text-red-600 mt-2 font-medium"> {error}</p>}
 
                             {/* Sign Up Button */}
                             <button className="btn w-full bg-linear-to-r from-indigo-600 to-pink-600 hover:from-indigo-700 hover:to-pink-700 text-white font-semibold mt-4 shadow-md hover:shadow-lg transition-all duration-300">
@@ -159,13 +154,11 @@ const SignUp = () => {
                     <div className="">
                         <button
                             onClick={handleSignUpWithGoogle}
-                            className="btn w-full btn-outline border-purple-400 text-purple-700 hover:bg-purple-100 hover:border-purple-500 flex items-center justify-center gap-2 transition"
-                        >
+                            className="btn w-full btn-outline border-purple-400 text-purple-700 hover:bg-purple-100 hover:border-purple-500 flex items-center justify-center gap-2 transition">
                             <FcGoogle size={20} /> Sign Up with Google
                         </button>
                     </div>
 
-                    {/* Bottom link */}
                     <div className="text-center mt-3">
                         <p className="font-medium text-gray-700">
                             Already have an account?{" "}
