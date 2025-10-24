@@ -1,4 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 import fullstack from "../../assets/fullStack.jpg";
 import marketing from "../../assets/digitalMarketing.jpg";
 import videoEditing from "../../assets/video.jpg";
@@ -9,76 +15,69 @@ import guitar from "../../assets/guitar.jpg";
 import photography from "../../assets/photography.jpg";
 import uiux from "../../assets/uiux.jpg";
 
-const images = [marketing, fullstack, spoken, videoEditing, python, publicSpeaking, photography, guitar, uiux ];
-
 const HeroSlider = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % images.length); 
-    }, 3000); 
-    return () => clearInterval(interval);
-  }, []);
+  const slides = [marketing, fullstack, spoken, videoEditing, python, publicSpeaking, photography, guitar, uiux ];
 
   return (
-
-    <div
-      className="flex flex-col md:flex-row justify-center gap-10 md:gap-0 items-center md:h-[550px] px-4 md:px-10 py-10"
-      style={{
-        background:
-          "linear-gradient(135deg, #c2e9fb 0%, #a1c4fd 25%, #cfd9df 50%, #d4c1ec 75%, #fbc2eb 100%)",
-      }}
-    >
-      {/* Left Side */}
-      <div className="flex-1 space-y-6 text-center md:text-left">
-        <h2 className="text-3xl md:text-5xl font-extrabold leading-tight text-gray-800 drop-shadow-sm">
-          <span className="bg-linear-to-r from-blue-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
+    <section
+      className="flex flex-col lg:flex-row items-center justify-between md:py-16 py-6 px-6 md:px-12 bg-linear-to-r from-blue-100 via-purple-100 to-pink-100">
+      {/* Left Section */}
+      <div className="flex-1 md:pr-10 text-center md:text-left mb-8">
+        <h2 className="md:text-5xl text-3xl font-extrabold text-gray-800 drop-shadow-sm mb-4">
+          <span className="bg-linear-to-r from-blue-600 via-purple-600 to-pink-500 bg-clip-text text-transparent inline-block pb-2 md:pb-4">
             Learn. Share. Grow.
-          </span>{" "}
+          </span>
           <br />
           with <span className="text-gray-900">SkillSwap</span>
         </h2>
 
-        <div className="w-24 h-1 bg-linear-to-r from-blue-500 to-pink-500 mx-auto md:mx-0 rounded-full"></div>
+        <div className="w-24 h-1 bg-linear-to-r from-blue-500 to-pink-500 rounded-full mb-4 mx-auto md:mx-0"></div>
 
-        <p className="text-gray-700 text-base md:text-lg max-w-md mx-auto md:mx-0 leading-relaxed">
+        <p className="text-gray-700 text-base md:text-lg leading-relaxed max-w-md mx-auto md:mx-0 mb-6">
           Discover and exchange new skills with creative minds near you — from{" "}
-          <span className="font-semibold text-blue-600">programming</span> and
-          <span className="font-semibold text-purple-600"> design</span> to
-          <span className="font-semibold text-pink-600"> music</span> and
-          <span className="font-semibold text-indigo-600">
-            {" "}
-            public speaking
-          </span>
-          . Build connections, learn together, and inspire growth.
+          <span className="font-semibold text-blue-600">programming</span> and{" "}
+          <span className="font-semibold text-purple-600">design</span> to{" "}
+          <span className="font-semibold text-pink-600">music</span> and{" "}
+          <span className="font-semibold text-indigo-600">public speaking</span>.
+          Build connections, learn together, and inspire growth.
         </p>
 
-        <div className="pt-3">
-          <button className="px-8 py-3 rounded-xl bg-linear-to-r from-blue-600 to-pink-500 text-white font-semibold shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300">
-            Explore Skills →
-          </button>
-        </div>
+        <button className="px-8 py-3 rounded-xl bg-linear-to-r from-blue-600 to-pink-500 text-white font-semibold shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300">
+          Explore Skills →
+        </button>
       </div>
 
-      {/* Right Side (Auto Carousel) */}
-      <div className="flex-1 flex justify-center items-center">
-        <div className="relative w-full h-[380px] rounded-2xl shadow-lg overflow-hidden">
-          {images.map((img, index) => (
-            <img
-              key={index}
-              src={img}
-              alt={`slide-${index}`}
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-2000 ease-in-out ${
-                index === currentIndex ? "opacity-100" : "opacity-0"
-              }`}
-            />
+      {/* Right Section (Swiper Slider) */}
+      <div className="flex-1 w-full md:w-[500px]">
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={30}
+          slidesPerView={1} 
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
+          loop={true}
+          speed={1000}
+          className="py-6">
+          {slides.map((img, index) => (
+            <SwiperSlide key={index}>
+              <div className="card bg-white rounded-3xl overflow-hidden shadow-lg">
+                <figure className="overflow-hidden">
+                  <img
+                    src={img}
+                    alt={`slide-${index}`}
+                    className="w-full h-82 xl:h-90 object-cover hover:scale-103 transition-transform duration-500"/>
+                </figure>
+              </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
-    </div>
+    </section>
   );
 };
 
 export default HeroSlider;
+
+
+
