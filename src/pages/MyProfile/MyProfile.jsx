@@ -29,8 +29,8 @@ const MyProfile = () => {
         setUser({ ...user, displayName: fullName, photoURL: photoURL });
         toast.success("Profile updated successfully!");
       })
-      .catch((error) => {
-        console.error(error);
+      .catch(() => {
+        // console.error(error);
         toast.error("Failed to update profile.");
       });
   };
@@ -74,9 +74,8 @@ const MyProfile = () => {
               type="text"
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
-              className="w-full p-2 border rounded-lg focus:ring-2 focus:ring-indigo-400"
-              placeholder="Enter your name"
-            />
+              className="w-full p-2 border rounded-lg"
+              placeholder="Enter your name"/>
           </div>
 
           {/* Email (Read-only) */}
@@ -88,8 +87,7 @@ const MyProfile = () => {
               type="text"
               value={user?.email || ""}
               readOnly
-              className="w-full p-2 border rounded-lg bg-gray-100 cursor-not-allowed"
-            />
+              className="w-full p-2 border rounded-lg bg-gray-100 cursor-not-allowed"/>
           </div>
 
           {/* Photo URL Field */}
@@ -102,8 +100,7 @@ const MyProfile = () => {
               value={photoURL}
               onChange={(e) => setPhotoURL(e.target.value)}
               className="w-full p-2 border rounded-lg focus:ring-2 focus:ring-indigo-400"
-              placeholder="Paste your photo URL here"
-            />
+              placeholder="Paste your photo URL here"/>
           </div>
 
           {/* Address */}
@@ -115,9 +112,8 @@ const MyProfile = () => {
               type="text"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
-              className="w-full p-2 border rounded-lg focus:ring-2 focus:ring-indigo-400"
-              placeholder="Enter your address"
-            />
+              className="w-full p-2 border rounded-lg focus:ring-2 focus:ring-indigo-400 placeholder:text-gray-400"
+              placeholder="Enter your address"/>
 
             {/* Update Button */}
             <button

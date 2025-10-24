@@ -8,13 +8,16 @@ const Navbar = () => {
   const { user, setUser, signOutUser } = useContext(AuthContext);
 
   const handleSignout = () => {
+
+    // Sign Out 
     signOutUser()
       .then(() => {
-        toast.success("Signout successful");
+        toast.success("Signout successful 🎉");
         setUser(null);
       })
-      .catch((e) => {
-        toast.error(e.message);
+      .catch((err) => {
+        
+        toast.error(err.message);
       });
   };
 

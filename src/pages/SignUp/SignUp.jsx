@@ -40,11 +40,16 @@ const SignUp = () => {
             return;
         }
 
+        // Clear 
+        setSuccess("");
+        setError("");
+
+        // Sign Up 
         createUser(email, password)
             .then(res => {
                 updateUserProfile(displayName, photoURL)
                     .then(() => {
-                        console.log(res.user)
+                        // console.log(res.user)
                         toast.success("SignUp Successful 🎉");
                         setUser(res.user);
                         setSuccess(true);
@@ -64,8 +69,8 @@ const SignUp = () => {
     // Google SignIn
     const handleSignUpWithGoogle = () => {
         googleSignIn()
-            .then(res => {
-                console.log(res)
+            .then(() => {
+                // console.log(res)
                 toast.success("Signup successful with Google 🎉");
                 navigate("/");
             })

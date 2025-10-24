@@ -25,13 +25,13 @@ const Login = () => {
         event.preventDefault();
         const password = event.target.password.value;
 
-        setSuccess(false);
+        setSuccess("");
         setError("");
 
         // Login With Email and Password
         userLogin(email, password)
-            .then(res => {
-                console.log(res.user)
+            .then(() => {
+                // console.log(res.user)
                 setSuccess(true);
                 event.target.reset();
                 setEmail("");
@@ -47,10 +47,10 @@ const Login = () => {
     // Login With Google 
     const handleLoginWithGoogle = () => {
         googleSignIn()
-            .then(res => {
-                console.log(res.user)
+            .then(() => {
+                // console.log(res.user)
                 setSuccess(true);
-                toast.success("Login successful 🎉");
+                toast.success("Login successful with Google 🎉");
                 navigate(`${location.state ? location.state : "/"}`)
 
             })
@@ -89,12 +89,12 @@ const Login = () => {
                                 <input
                                     type={showPassword ? "text" : "password"}
                                     name="password"
-                                    className="w-full border border-purple-300 rounded-md px-3 py-2 placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-purple-500 pr-10"
+                                    className="w-full border border-purple-300 rounded-sm px-3 py-3 placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-purple-500 pr-10"
                                     required
                                     placeholder="Enter your password"/>
                                 <div
                                     onClick={() => setShowPassword(!showPassword)}
-                                    className="absolute top-2.5 right-3 text-gray-600 cursor-pointer z-10">
+                                    className="absolute top-3 right-3 text-gray-600 cursor-pointer z-10">
                                     {showPassword ? <FaEye size={18} /> : <FaEyeSlash size={18} />}
                                 </div>
                             </div>

@@ -55,7 +55,7 @@ const ResetPassword = () => {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="Enter your email"
-                            className="w-full p-2 border border-gray-300 rounded"
+                            className="w-full p-2 border border-gray-500 rounded placeholder:text-gray-400"
                             required />
                     </div>
 

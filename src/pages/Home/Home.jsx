@@ -8,7 +8,7 @@ import WhyLearnWithUs from '../../components/WhyLearnWithUs/WhyLearnWithUs';
 
 const Home = () => {
     const demandingSkills = useLoaderData();
-    console.log(demandingSkills)
+
     return (
         <div className='max-w-screen-2xl m-auto max-xl:max-w-7xl max-lg:max-w-5xl max-md:max-w-3xl max-sm:max-w-screen-sm'>
 
