@@ -32,7 +32,7 @@ const Navbar = () => {
         {/* Left */}
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden text-gray-700">
+            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden text-gray-700 -ml-4">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none"
                 viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"

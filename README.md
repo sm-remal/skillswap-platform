@@ -1,26 +1,17 @@
 # 🌐 SkillSwap Platform
 
-A modern, responsive, and user-friendly **React + Firebase** based web application designed to deliver online learning experiences with a beautiful UI, smooth animations, and secure authentication system.
+**Project Name:** SkillSwap Platform  
+**Purpose:** An interactive platform where users can offer, learn, and trade skills within their local area. Examples include guitar lessons, language exchange, coding help, or yoga training. Users can browse listings, rate experiences, and connect with local skill providers.
+
+A modern, responsive, and user-friendly **React + Firebase** web application with smooth animations, secure authentication, and an engaging UI.
 
 ---
 
 ## 🚀 Live Demo
 
-🔗 [View Live Project](https://skillswap-platform-sm.netlify.app)
+🔗 Firebase: [View Live Project](https://skill-swap-4c338.web.app)
 
----
-
-## 🧠 Project Overview
-
-This project is a **SkillSwap Platform** that allows users to:
-- Register, log in, and manage their profiles.
-- Explore multiple online courses (Full Stack Development, Marketing, Video Editing, Python, etc.).
-- View responsive and animated slides for each course.
-- Update their name, avatar, and other personal details in profile.
-- Reset passwords securely using Firebase Authentication.
-- Experience smooth UI transitions and toast notifications.
-
-The design is **responsive**, **fast**, and **optimized for all devices**.
+🔗 Netlify: [View Live Project](https://skillswap-platform-sm.netlify.app)
 
 ---
 
@@ -33,26 +24,49 @@ The design is **responsive**, **fast**, and **optimized for all devices**.
 ✅ **Toast Notifications** – Real-time feedback using `react-hot-toast`  
 ✅ **Responsive Navbar & Routing** – Managed via `react-router`  
 ✅ **Loading Spinners** – Custom loaders with `react-spinners`  
-✅ **Modern UI** – Built using `TailwindCSS` and icons from `lucide-react` & `react-icons`
+✅ **Modern UI** – Built using `TailwindCSS` and icons from `lucide-react` & `react-icons`  
+✅ **Skill Listings** – Browse and connect with local skill providers  
+✅ **Ratings & Reviews** – Users can rate and review experiences  
+✅ **Search & Filter** – Search skills by category and location  
 
 ---
 
-## 🧩 Tech Stack
+## 🧩 Tech Stack & NPM Packages Used
 
-| Category | Technology |
-|-----------|-------------|
+| Category | Technology / NPM Packages |
+|-----------|--------------------------|
 | Frontend | React (v19.1.1) |
 | Styling | Tailwind CSS (v4.1.15) |
 | Animations | AOS (v2.3.4), Swiper (v12.0.3) |
 | Routing | React Router (v7.9.4) |
 | Backend / Auth | Firebase (v12.4.0) |
-| Notifications | React Hot Toast (v2.6.0) |
-| Icons | React Icons (v5.5.0), Lucide React (v0.546.0) |
-| Loading UI | React Spinners (v0.17.0) |
-| Build Tool | Vite with Tailwind Plugin & DaisyUI|
+| Notifications | react-hot-toast (v2.6.0) |
+| Icons | react-icons (v5.5.0), lucide-react (v0.546.0) |
+| Loading UI | react-spinners (v0.17.0) |
+| Build Tool | Vite with Tailwind Plugin & DaisyUI |
+
+**Install Packages:**  
+```bash
+npm install react react-dom react-router-dom firebase aos swiper react-hot-toast react-icons lucide-react react-spinners tailwindcss daisyui
+```
 
 ---
 
+## 🧠 Project Overview
+
+This project is a **SkillSwap Platform** that allows users to:
+- Register, log in, and manage their profiles.
+- Explore multiple online courses (Full Stack Development, Marketing, Video Editing, Python, etc.).
+- View responsive and animated slides for each course.
+- Update their name, avatar, and other personal details in profile.
+- Reset passwords securely using Firebase Authentication.
+- Experience smooth UI transitions and toast notifications.
+- Browse and connect with local skill providers.
+- Rate and review experiences.
+
+The design is **responsive**, **fast**, and **optimized for all devices**.
+
+---
 
 ## 📁 Folder Structure
 
@@ -69,19 +83,19 @@ src/
 ```
 
 ---
+
 ## 📸 Screenshots
 
-### 🏠 Home page
+### 🏠 Home Page
 ![Homepage Screenshot](public/screenshots/home_page.PNG)
 
 ### 📰 Course Details Page
-![News Details Screenshot](public/screenshots/course_details.PNG)
+![Course Details Screenshot](public/screenshots/course_details.PNG)
 
 ### 🔐 Sign Up Page
 ![Login Screenshot](public/screenshots/signup.PNG)
 
 ---
-
 
 ## 🔒 Environment & Security
 
@@ -96,27 +110,18 @@ src/
 - Built using **React 19** and **Vite** for ultra-fast development.
 - UI fully responsive and mobile-friendly.
 - Clean code, modular structure, and reusable components.
-- Deployed on **Firebase Hosting** or **Netlify**.
+- Deployed on **Netlify**.
 
 ---
 
 ## 🧷 Future Enhancements
 
 - Sign IN & Sign Up user friendly
-- Password reset option    
+- Password reset option
 - View course details & Book a Session
-- Implement progress tracking per user  
-- Add instructor and admin panel 
+- Implement progress tracking per user
+- Add instructor and admin panel
 
 ---
-
-## 💬 Feedback & Support
-
-If you have any suggestions or feedback, feel free to:
-- Open an issue on [GitHub Issues](https://github.com/your-username/your-repo-name/issues)
-- Or contact me directly through email/socials (optional)
-
----
-
 
 ⭐ **Don’t forget to give this repo a star if you like it!**

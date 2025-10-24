@@ -112,7 +112,7 @@ const Login = () => {
 
                             {/* Success/Error */}
                             {success && <p className="text-green-600 mt-2 font-medium"> Logged in successfully!</p>}
-                            {error && <p className="text-red-600 mt-2 font-medium">⚠️ {error}</p>}
+                            {error && <p className="text-red-600 mt-2 font-medium"> {error}</p>}
 
                             {/* Login Button */}
                             <button className="btn w-full bg-linear-to-r from-indigo-600 to-pink-600 hover:from-indigo-700 hover:to-pink-700 text-white font-semibold mt-4 shadow-md hover:shadow-lg transition-all duration-300">

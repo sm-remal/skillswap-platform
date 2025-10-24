@@ -74,7 +74,7 @@ const MyProfile = () => {
               type="text"
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
-              className="w-full p-2 border rounded-lg"
+              className="w-full p-2 border rounded-lg placeholder:text-gray-400"
               placeholder="Enter your name"/>
           </div>
 
@@ -99,7 +99,7 @@ const MyProfile = () => {
               type="text"
               value={photoURL}
               onChange={(e) => setPhotoURL(e.target.value)}
-              className="w-full p-2 border rounded-lg focus:ring-2 focus:ring-indigo-400"
+              className="w-full p-2 border rounded-lg focus:ring-2 focus:ring-indigo-400 placeholder:text-gray-400"
               placeholder="Paste your photo URL here"/>
           </div>
 
