@@ -24,7 +24,7 @@ const WhyLearnWithUs = () => {
   ];
 
   return (
-    <section className="relative py-16 bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300">
+    <section className="relative py-16 bg-linear-to-r from-blue-300 via-purple-300 to-pink-300">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-800">
         <h2 className="text-3xl md:text-4xl font-bold mb-3"> 
           Why Learn With Us?
