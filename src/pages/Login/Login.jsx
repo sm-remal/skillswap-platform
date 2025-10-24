@@ -10,7 +10,7 @@ const Login = () => {
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState("");
     const [showPassword, setShowPassword] = useState(false);
-    const [email, setEmail] = useState(""); 
+    const [email, setEmail] = useState("");
 
 
     const location = useLocation()
@@ -19,7 +19,7 @@ const Login = () => {
 
 
     const { userLogin, googleSignIn } = useContext(AuthContext);
-    
+
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -34,7 +34,7 @@ const Login = () => {
                 console.log(res.user)
                 setSuccess(true);
                 event.target.reset();
-                setEmail(""); 
+                setEmail("");
                 toast.success("Login successful 🎉");
                 navigate(`${location.state ? location.state : "/"}`)
             })
@@ -81,23 +81,24 @@ const Login = () => {
                                 onChange={(e) => setEmail(e.target.value)}
                                 name="email"
                                 className="input w-full border border-purple-300 placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-purple-500"
-                                placeholder="Enter your email"/>
+                                placeholder="Enter your email" />
 
                             {/* Password */}
                             <label className="label text-gray-800 font-medium">Password</label>
-                            <div className="relative">
+                            <div className="relative w-full">
                                 <input
-                                    type={`${showPassword ? "text" : "password"}`}
+                                    type={showPassword ? "text" : "password"}
                                     name="password"
-                                    className="input w-full border border-purple-300 placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-purple-500"
+                                    className="w-full border border-purple-300 rounded-md px-3 py-2 placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-purple-500 pr-10"
                                     required
                                     placeholder="Enter your password"/>
                                 <div
                                     onClick={() => setShowPassword(!showPassword)}
-                                    className="absolute top-3 right-4 text-gray-600 cursor-pointer">
+                                    className="absolute top-2.5 right-3 text-gray-600 cursor-pointer z-10">
                                     {showPassword ? <FaEye size={18} /> : <FaEyeSlash size={18} />}
                                 </div>
                             </div>
+
 
                             {/* Forget Password */}
                             <div>

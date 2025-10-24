@@ -95,7 +95,7 @@ const SignUp = () => {
                                 name="name"
                                 className="input w-full border border-purple-300 placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-purple-500 px-4"
                                 required
-                                placeholder="Enter your name"/>
+                                placeholder="Enter your name" />
 
                             {/* Photo URL */}
                             <label className="label text-gray-800 font-medium">Photo URL</label>
@@ -103,7 +103,7 @@ const SignUp = () => {
                                 type="text"
                                 name="photoURL"
                                 className="input w-full border border-purple-300 placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-purple-500 px-4"
-                                placeholder="Paste your photo link"/>
+                                placeholder="Paste your photo link" />
 
                             {/* Email */}
                             <label className="label text-gray-800 font-medium">Email Address</label>
@@ -112,23 +112,24 @@ const SignUp = () => {
                                 name="email"
                                 className="input w-full border border-purple-300 placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-purple-500 px-4"
                                 required
-                                placeholder="example@email.com"/>
+                                placeholder="example@email.com" />
 
                             {/* Password */}
                             <label className="label text-gray-800 font-medium">Password</label>
                             <div className="relative flex items-center">
                                 <input
-                                    type={`${showPassword ? "text" : "password"}`}
+                                    type={showPassword ? "text" : "password"}
                                     name="password"
                                     className="input w-full border border-purple-300 placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-purple-500 pr-12 px-4"
                                     required
                                     placeholder="Enter a strong password"/>
                                 <div
                                     onClick={() => setShowPassword(!showPassword)}
-                                    className="absolute right-3 cursor-pointer text-gray-600">
+                                    className="absolute right-4 text-gray-600 cursor-pointer z-10">
                                     {showPassword ? <FaEye size={18} /> : <FaEyeSlash size={18} />}
                                 </div>
                             </div>
+
 
                             {/* Checkbox */}
                             <label className="label mt-2 flex items-center gap-2">
