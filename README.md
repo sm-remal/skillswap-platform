@@ -47,7 +47,7 @@ A modern, responsive, and user-friendly **React + Firebase** web application wit
 
 **Install Packages:**  
 ```bash
-npm install react react-dom react-router-dom firebase aos swiper react-hot-toast react-icons lucide-react react-spinners tailwindcss daisyui
+npm install react react-dom react-router firebase aos swiper react-hot-toast react-icons lucide-react react-spinners tailwindcss daisyui
 ```
 
 ---
