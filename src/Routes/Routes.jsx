@@ -13,6 +13,7 @@ import ResetPassword from '../pages/ResetPassword/ResetPassword';
 import Courses from '../pages/Courses/Courses';
 import About from '../pages/About/About';
 import Support from '../pages/Support/Support';
+import Blogs from '../pages/Blogs/Blogs';
 
 
 export const router = createBrowserRouter([
@@ -41,6 +42,10 @@ export const router = createBrowserRouter([
       {
         path: "about",
         Component: About,
+      },
+      {
+        path: "blogs",
+        Component: Blogs,
       },
       {
         path: "support",

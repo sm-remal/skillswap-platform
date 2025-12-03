@@ -33,10 +33,10 @@ const Courses = () => {
     }, [search, courses]);
 
     return (
-        <div className="container mx-auto px-4 py-10">
+        <div className="container mx-auto px-4 py-10 bg-gray-100">
 
             {/* Page Title */}
-            <h2 className="text-3xl font-bold text-center text-blue-600 mb-6">
+            <h2 className="text-3xl md:text-5xl font-bold text-center text-purple-600 mb-6">
                 All Courses
             </h2>
 
@@ -61,7 +61,7 @@ const Courses = () => {
             )}
 
             {/* Course Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:px-9">
                 {filtered.map((course) => (
                     <SkillCards key={course.skillId} skills={course} />
                 ))}

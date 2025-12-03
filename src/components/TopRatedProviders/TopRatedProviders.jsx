@@ -39,7 +39,7 @@ const TopRatedProviders = () => {
   ];
 
   return (
-    <section className=" md:py-10 pb-10 bg-linear-to-b from-white to-blue-50/40">
+    <section className=" md:py-10 pb-10">
       {/*  Section Title */}
       <div className="text-center max-w-2xl mx-auto mb-12 px-5" data-aos="zoom-in">
         <h2 className="text-3xl font-extrabold text-blue-600">

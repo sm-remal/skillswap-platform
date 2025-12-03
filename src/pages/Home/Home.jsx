@@ -10,7 +10,7 @@ const Home = () => {
     const demandingSkills = useLoaderData();
 
     return (
-        <div className='max-w-screen-2xl m-auto max-xl:max-w-7xl max-lg:max-w-5xl max-md:max-w-3xl max-sm:max-w-screen-sm'>
+        <div className='max-w-screen-2xl m-auto max-xl:max-w-7xl max-lg:max-w-5xl max-md:max-w-3xl max-sm:max-w-screen-sm bg-gray-100'>
 
             {/* Hero Section  */}
             <HeroSlider></HeroSlider>
@@ -23,7 +23,7 @@ const Home = () => {
 
             {/* Popular Skills Card  */}
 
-            <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 my-10 px-4'>
+            <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 my-10 md:px-9'>
                 {
                     demandingSkills.slice(0, 8).map(skills => <SkillCards key={skills.skillId} skills={skills}></SkillCards>)
                 }

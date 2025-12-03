@@ -10,6 +10,7 @@ import goalImg from "../../assets/about/goalImg.jpg";
 import branchImg from "../../assets/about/branch.jpg";
 // import departmentImg from "../../assets/about/department.jpg";
 import paymentImg from "../../assets/about/paymentimg.jpg";
+import { Link } from "react-router";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -54,7 +55,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <motion.div
         className="relative bg-blue-600 text-white overflow-hidden"
@@ -70,7 +71,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">About Us</h1>
+            <h1 className="text-3xl md:text-5xl font-bold mb-6">About Us</h1>
             <p className="text-xl md:text-2xl text-blue-100">
               Empowering learners worldwide with quality education and practical skills
             </p>
@@ -332,9 +333,9 @@ const About = () => {
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
             Join thousands of students already learning with us and transform your career
           </p>
-          <button className="px-8 py-4 bg-white text-blue-600 rounded-full font-bold text-lg hover:bg-blue-50 transition-colors duration-300 shadow-lg">
+          <Link to={"/courses"} className="px-8 py-3 bg-white text-blue-600 rounded-full font-bold text-lg hover:bg-blue-50 transition-colors duration-300 shadow-lg">
             Explore Courses
-          </button>
+          </Link>
         </div>
       </motion.div>
     </div>
