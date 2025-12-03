@@ -14,6 +14,7 @@ import Courses from '../pages/Courses/Courses';
 import About from '../pages/About/About';
 import Support from '../pages/Support/Support';
 import Blogs from '../pages/Blogs/Blogs';
+import PrivacyPolicy from '../pages/PrivacyPolicy/PrivacyPolicy';
 
 
 export const router = createBrowserRouter([
@@ -66,6 +67,10 @@ export const router = createBrowserRouter([
       {
         path: "reset-password",
         Component: ResetPassword,
+      },
+      {
+        path: "privacy-policy",
+        Component: PrivacyPolicy,
       }
     ]
   },

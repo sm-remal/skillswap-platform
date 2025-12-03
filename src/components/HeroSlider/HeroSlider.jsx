@@ -34,7 +34,7 @@ const HeroSlider = () => {
 
         <div className="w-24 h-1 bg-linear-to-r from-blue-500 to-pink-500 rounded-full mb-4 mx-auto md:mx-0"></div>
 
-        <p className="text-gray-700 text-base md:text-lg leading-relaxed max-w-md mx-auto md:mx-0 mb-6">
+        <p className="text-black text-base md:text-lg leading-relaxed max-w-md mx-auto md:mx-0 mb-6">
           Discover and exchange new skills with creative minds near you — from{" "}
           <span className="font-semibold text-blue-600">programming</span> and{" "}
           <span className="font-semibold text-purple-600">design</span> to{" "}

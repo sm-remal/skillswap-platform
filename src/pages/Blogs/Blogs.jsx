@@ -107,7 +107,7 @@ const Blogs = () => {
     const uniqueCategories = [...new Set(blogPosts.map(post => post.category))];
 
     return (
-        <div className="bg-white min-h-screen">
+        <div className="bg-gray-50 min-h-screen">
             <div className="container mx-auto px-4 py-16 space-y-16">
 
                 {/* --- 1. Hero Section --- */}
@@ -264,17 +264,6 @@ const Blogs = () => {
                         ))}
                     </div>
                 </section>
-
-                {/* --- Pagination/CTA (Optional) --- */}
-                <div className="text-center pt-8" data-aos="fade-up" data-aos-delay="100">
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="bg-purple-600 text-white font-semibold py-3 px-8 rounded-xl shadow-md hover:bg-purple-700 transition"
-                    >
-                        Load More Articles
-                    </motion.button>
-                </div>
             </div>
         </div>
     );

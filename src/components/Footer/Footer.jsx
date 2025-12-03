@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaTwitter, FaYoutube, FaLinkedin } from 'react-icons/fa';
+import { Link } from 'react-router';
 
 const Footer = () => {
     return (
@@ -12,19 +13,12 @@ const Footer = () => {
                     </p>
                 </div>
                 <section className='flex flex-col md:flex-row gap-4 md:gap-10 mt-7 md:mt-0 md:ml-24 flex-1'>
-                    <div className='flex-1 space-y-3'>
+                    <div className='flex flex-col flex-1 space-y-3'>
                         <h6 className="footer-title text-white font-semibold">Resources</h6>
-                        <p className="link link-hover text-white cursor-pointer hover:underline">Help Center</p>
-                        <p className="link link-hover text-white cursor-pointer hover:underline">Privacy Policy</p>
-                        <p className="link link-hover text-white cursor-pointer hover:underline">Terms of Service</p>
-                        <p className="link link-hover text-white cursor-pointer hover:underline">Blog</p>
-                    </div>
-                    <div className='flex-1 space-y-3 mt-5 md:mt-0'>
-                        <h6 className="footer-title text-white font-semibold">Company</h6>
-                        <p className="link link-hover text-white cursor-pointer hover:underline">About Us</p>
-                        <p className="link link-hover text-white cursor-pointer hover:underline">Contact</p>
-                        <p className="link link-hover text-white cursor-pointer hover:underline">Careers</p>
-                        <p className="link link-hover text-white cursor-pointer hover:underline">Press</p>
+                        <Link to={"/privacy-policy"} className="link link-hover text-white cursor-pointer hover:underline">Privacy Policy</Link>
+                        <Link to={"/about"} className="link link-hover text-white cursor-pointer hover:underline">About Us</Link>
+                        <Link to={"/support"} className="link link-hover text-white cursor-pointer hover:underline">Support</Link>
+                        <Link to={"/blogs"} className="link link-hover text-white cursor-pointer hover:underline">Blogs</Link>
                     </div>
                     <div className='flex-1 mt-5 md:mt-0'>
                         <h6 className="footer-title text-white font-semibold">Follow Us</h6>
