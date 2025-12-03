@@ -4,11 +4,11 @@ import { Users, Target, Award, Rocket, MapPin, BookOpen, CreditCard, TrendingUp 
 
 // Example images (replace with your own URLs)
 import aboutImg from "../../assets/about/about.jpg";
-import milestoneImg from "../../assets/about/milestoneImg.jpg";
+// import milestoneImg from "../../assets/about/milestoneImg.jpg";
 import goalImg from "../../assets/about/goalImg.jpg";
-import initiativeImg from "../../assets/about/initiative.jpg";
+// import initiativeImg from "../../assets/about/initiative.jpg";
 import branchImg from "../../assets/about/branch.jpg";
-import departmentImg from "../../assets/about/department.jpg";
+// import departmentImg from "../../assets/about/department.jpg";
 import paymentImg from "../../assets/about/paymentimg.jpg";
 
 const fadeInUp = {
@@ -32,7 +32,7 @@ const staggerContainer = {
 
 const About = () => {
   const stats = [
-    { number: "2500+", label: "Students Trained", icon: Users },
+    { number: "10,000+", label: "Students Trained", icon: Users },
     { number: "500+", label: "Courses Published", icon: BookOpen },
     { number: "120+", label: "Expert Instructors", icon: Award },
     { number: "98%", label: "Success Rate", icon: TrendingUp }

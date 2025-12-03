@@ -14,6 +14,7 @@ import spoken from "../../assets/englishSpoken.jpg";
 import guitar from "../../assets/guitar.jpg";
 import photography from "../../assets/photography.jpg";
 import uiux from "../../assets/uiux.jpg";
+import { Link } from "react-router";
 
 const HeroSlider = () => {
   const slides = [marketing, fullstack, spoken, videoEditing, python, publicSpeaking, photography, guitar, uiux ];
@@ -42,9 +43,9 @@ const HeroSlider = () => {
           Build connections, learn together, and inspire growth.
         </p>
 
-        <button className="px-8 py-3 rounded-xl bg-linear-to-r from-blue-600 to-pink-500 text-white font-semibold shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300">
+        <Link to={"/courses"} className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold py-3 px-5 rounded-lg hover:from-indigo-700 hover:to-purple-700 transform hover:scale-[1.02] transition-all duration-200 shadow-md cursor-pointer">
           Explore Skills →
-        </button>
+        </Link>
       </div>
 
       {/* Right Section (Swiper Slider) */}

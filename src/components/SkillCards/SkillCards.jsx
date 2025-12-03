@@ -42,7 +42,7 @@ const SkillCards = ({ skills }) => {
         {/* Button pushed to bottom */}
         <div className="mt-auto">
           <Link to={`/skill-details/${skillId}`}>
-            <button className="w-full mt-2 py-2 rounded-lg bg-linear-to-r from-blue-500 to-purple-600 text-white font-semibold hover:from-purple-600 hover:to-pink-500 shadow-md hover:shadow-lg hover:scale-[1.03] transition-all duration-300 cursor-pointer">
+            <button className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold py-2 rounded-lg hover:from-indigo-700 hover:to-purple-700 transform hover:scale-[1.02] transition-all duration-200 shadow-md cursor-pointer">
               View Details →
             </button>
           </Link>

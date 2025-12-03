@@ -1,18 +1,7 @@
-// import React from 'react';
-
-// const Courses = () => {
-//     return (
-//         <div>
-//             Courses
-//             <p>Lorem</p>
-//         </div>
-//     );
-// };
-
-// export default Courses;
-
 import React, { useEffect, useState } from "react";
 import SkillCards from "../../components/SkillCards/SkillCards";
+import { FaSearch } from "react-icons/fa";
+import Loading from "../../components/Loading/Loading";
 
 const Courses = () => {
     const [courses, setCourses] = useState([]);
@@ -45,27 +34,36 @@ const Courses = () => {
 
     return (
         <div className="container mx-auto px-4 py-10">
-            <h2 className="text-3xl font-bold mb-6">All Courses</h2>
 
-            {/* Search Box */}
-            <input
-                type="text"
-                placeholder="Search by skill name or category..."
-                className="w-full px-4 py-2 border rounded-md mb-6"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-            />
+            {/* Page Title */}
+            <h2 className="text-3xl font-bold text-center text-blue-600 mb-6">
+                All Courses
+            </h2>
+
+            {/* Search Bar */}
+            <div className="flex justify-center mb-10">
+                <div className="relative w-full max-w-md">
+                    <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-lg" />
+
+                    <input
+                        type="text"
+                        placeholder="Search by skill name or category..."
+                        className="w-full px-5 py-3 pl-12 border rounded-full focus:outline-none shadow-sm"
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                    />
+                </div>
+            </div>
 
             {/* Loading */}
-            {courses.length === 0 && <p>Loading courses...</p>}
+            {courses.length === 0 && (
+                <Loading></Loading>
+            )}
 
             {/* Course Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {filtered.map((course) => (
-                    <SkillCards
-                        key={course.skillId}
-                        skills={course}   // <-- FIXED
-                    />
+                    <SkillCards key={course.skillId} skills={course} />
                 ))}
             </div>
 
