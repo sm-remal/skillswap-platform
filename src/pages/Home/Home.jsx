@@ -25,7 +25,7 @@ const Home = () => {
 
             <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 my-10 px-4'>
                 {
-                    demandingSkills.map(skills => <SkillCards key={skills.skillId} skills={skills}></SkillCards>)
+                    demandingSkills.slice(0, 8).map(skills => <SkillCards key={skills.skillId} skills={skills}></SkillCards>)
                 }
             </div>
 
