@@ -23,11 +23,8 @@ const Navbar = () => {
 
   return (
     <div
-      className="shadow-xs sticky top-0 z-50"
-      style={{
-        background: "linear-gradient(90deg, #c2e9fb 0%, #d4c1ec 50%, #fbc2eb 100%)"
-      }}>
-      <div className="navbar max-w-screen-2xl m-auto max-xl:max-w-7xl max-lg:max-w-5xl max-md:max-w-3xl max-sm:max-w-screen-sm text-gray-800">
+      className="shadow-xs fixed top-0 w-full z-50 bg-pink-100">
+      <div className="navbar max-w-screen-2xl m-auto max-xl:max-w-7xl max-lg:max-w-5xl max-md:max-w-3xl max-sm:max-w-screen-sm text-gray-800 px-10">
 
         {/* Left */}
         <div className="navbar-start">
@@ -63,9 +60,30 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to="/my-profile"
+                to="/courses"
                 className={({ isActive }) => isActive ? "text-blue-600 font-bold" : ""}>
-                My Profile
+                Courses
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/blogs"
+                className={({ isActive }) => isActive ? "text-blue-600 font-bold" : ""}>
+                Blogs
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/about"
+                className={({ isActive }) => isActive ? "text-blue-600 font-bold" : ""}>
+                About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/support"
+                className={({ isActive }) => isActive ? "text-blue-600 font-bold" : ""}>
+                Support
               </NavLink>
             </li>
           </ul>
@@ -102,3 +120,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

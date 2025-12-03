@@ -10,6 +10,9 @@ import PrivateRoute from './PrivateRoute';
 import ErrorPage from '../components/ErrorPage/ErrorPage';
 import Loading from '../components/Loading/Loading';
 import ResetPassword from '../pages/ResetPassword/ResetPassword';
+import Courses from '../pages/Courses/Courses';
+import About from '../pages/About/About';
+import Support from '../pages/Support/Support';
 
 
 export const router = createBrowserRouter([
@@ -30,6 +33,18 @@ export const router = createBrowserRouter([
         element: <PrivateRoute>
           <SkillsDetails></SkillsDetails>
         </PrivateRoute>
+      },
+      {
+        path: "courses",
+        Component: Courses,
+      },
+      {
+        path: "about",
+        Component: About,
+      },
+      {
+        path: "support",
+        Component: Support,
       },
       {
         path: "my-profile",

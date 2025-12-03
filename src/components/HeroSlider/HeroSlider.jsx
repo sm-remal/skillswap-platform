@@ -20,7 +20,7 @@ const HeroSlider = () => {
 
   return (
     <section
-      className="flex flex-col lg:flex-row items-center justify-between md:py-16 py-6 px-6 md:px-12 bg-linear-to-r from-blue-100 via-purple-100 to-pink-100">
+      className="flex flex-col lg:flex-row items-center justify-between md:py-16 py-6 px-6 md:px-12 bg-blue-100">
       {/* Left Section */}
       <div className="flex-1 md:pr-10 text-center md:text-left mb-8">
         <h2 className="md:text-5xl text-3xl font-extrabold text-gray-800 drop-shadow-sm mb-4">
