@@ -32,9 +32,7 @@ export const router = createBrowserRouter([
       {
         path: "/skill-details/:id",
         loader: () => fetch("/demandingSkills.json"),
-        element: <PrivateRoute>
-          <SkillsDetails></SkillsDetails>
-        </PrivateRoute>
+        element: <SkillsDetails></SkillsDetails>
       },
       {
         path: "courses",
@@ -54,7 +52,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "my-profile",
-        element: <MyProfile></MyProfile>
+        element: <PrivateRoute><MyProfile></MyProfile></PrivateRoute>
       },
       {
         path: "login",

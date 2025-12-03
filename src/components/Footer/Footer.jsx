@@ -7,7 +7,9 @@ const Footer = () => {
         <footer className='bg-gray-800'>
             <div className="sm:footer-horizontal flex flex-col md:flex-row gap-5 md:gap-10 text-white p-10 max-w-screen-2xl m-auto max-xl:max-w-7xl max-lg:max-w-5xl max-md:max-w-3xl max-sm:max-w-screen-sm">
                 <div className='flex-1 max-w-[500px]'>
-                    <h3 className="footer-title text-white text-2xl font-bold mb-3">Discover SkillSwap</h3>
+                    <Link className="text-[28px] ml-3 md:ml-0 font-extrabold text-white">
+                        SkillSwap
+                    </Link>
                     <p>
                         SkillSwap is a platform where you can learn new skills or share your expertise. Explore courses, join easily, and enhance your knowledge. Our goal is to make learning simple, enjoyable, and effective.
                     </p>
