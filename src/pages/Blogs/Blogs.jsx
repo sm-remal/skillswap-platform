@@ -107,7 +107,7 @@ const Blogs = () => {
     const uniqueCategories = [...new Set(blogPosts.map(post => post.category))];
 
     return (
-        <div className="bg-gray-50 min-h-screen">
+        <div className="max-w-screen-2xl m-auto max-xl:max-w-7xl max-lg:max-w-5xl max-md:max-w-3xl max-sm:max-w-screen-sm md:px-7 bg-gray-50 min-h-screen">
             <div className="container mx-auto px-4 py-16 space-y-16">
 
                 {/* --- 1. Hero Section --- */}

@@ -81,7 +81,7 @@ const About = () => {
 
       {/* Stats Section */}
       <motion.div
-        className="container mx-auto px-4 -mt-16 relative z-20"
+        className="container mx-auto px-4 md:px-8 -mt-16 relative z-20"
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
@@ -106,7 +106,7 @@ const About = () => {
       <div className="container mx-auto px-4 py-20 space-y-24">
         {/* Who We Are */}
         <motion.div
-          className="grid md:grid-cols-2 gap-12 items-center"
+          className="grid md:grid-cols-2 gap-12 px-4 md:px-7 items-center"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
@@ -142,7 +142,7 @@ const About = () => {
 
         {/* Our Goal */}
         <motion.div
-          className="grid md:grid-cols-2 gap-12 items-center"
+          className="grid md:grid-cols-2 gap-12 items-center px-4 md:px-8"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
@@ -224,7 +224,7 @@ const About = () => {
           <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
             Comprehensive courses across multiple domains to match your career goals
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 md:px-8 gap-4">
             {departments.map((dept, index) => (
               <motion.div
                 key={index}
@@ -248,7 +248,7 @@ const About = () => {
           viewport={{ once: true, amount: 0.3 }}
           variants={fadeInUp}
         >
-          <div className="order-2 md:order-1">
+          <div className="order-2 md:pl-8 md:order-1">
             <MapPin className="w-12 h-12 text-pink-600 mb-4" />
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Presence</h2>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
@@ -271,7 +271,7 @@ const About = () => {
               </div>
             </div>
           </div>
-          <div className="order-1 md:order-2">
+          <div className="order-1 md:order-2 md:pr-8">
             <img
               src={branchImg}
               alt="Our Branches"

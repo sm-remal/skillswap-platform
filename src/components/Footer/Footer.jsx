@@ -16,7 +16,7 @@ const Footer = () => {
                 </div>
                 <section className='flex flex-col md:flex-row gap-4 md:gap-10 mt-7 md:mt-0 md:ml-24 flex-1'>
                     <div className='flex flex-col flex-1 space-y-3'>
-                        <h6 className="footer-title text-white font-semibold">Resources</h6>
+                        <h6 className="footer-title text-white font-semibold">Company</h6>
                         <Link to={"/privacy-policy"} className="link link-hover text-white cursor-pointer hover:underline">Privacy Policy</Link>
                         <Link to={"/about"} className="link link-hover text-white cursor-pointer hover:underline">About Us</Link>
                         <Link to={"/support"} className="link link-hover text-white cursor-pointer hover:underline">Support</Link>

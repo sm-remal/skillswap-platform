@@ -38,7 +38,7 @@ const SkillsDetails = () => {
   const hasHalfStar = skill.rating % 1 >= 0.5;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+    <div className="max-w-screen-2xl m-auto max-xl:max-w-7xl max-lg:max-w-5xl max-md:max-w-3xl max-sm:max-w-screen-sm min-h-screen bg-gray-100">
       <Toaster position="top-center" />
 
       <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
