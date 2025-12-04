@@ -147,7 +147,7 @@ const SignUp = () => {
                             {error && <p className="text-red-600 mt-2 font-medium"> {error}</p>}
 
                             {/* Sign Up Button */}
-                            <button className="btn w-full bg-linear-to-r from-indigo-600 to-pink-600 hover:from-indigo-700 hover:to-pink-700 text-white font-semibold mt-4 shadow-md hover:shadow-lg transition-all duration-300">
+                            <button className="btn mt-3 w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold py-2 rounded-lg hover:from-indigo-700 hover:to-purple-700 transform hover:scale-[1.02] transition-all duration-200 shadow-md cursor-pointer">
                                 Sign Up
                             </button>
                         </fieldset>

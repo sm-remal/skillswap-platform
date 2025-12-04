@@ -15,8 +15,8 @@ import AOS from "aos";
 
 // Initialize AOS (Animate On Scroll)
 AOS.init({
-    duration: 800, // Set a default duration
-    once: true,    // Animate only once
+    duration: 800, 
+    once: true,   
 });
 
 // --- Data for the FAQ section ---
@@ -90,7 +90,7 @@ const EnhancedSupport = () => {
     };
 
     return (
-        <div className="container mx-auto px-4 py-16 space-y-12 bg-gray-100 min-h-screen">
+        <div className="container mx-auto px-4 py-16 space-y-12 bg-gray-100 min-h-screen md:px-7">
 
             {/* Hero Section */}
             <section className="text-center space-y-6" data-aos="fade-up">
@@ -192,7 +192,7 @@ const EnhancedSupport = () => {
             <hr className="border-gray-300" />
 
             {/* Contact Form */}
-            <section className="max-w-[1480px] mx-auto" data-aos="fade-up" data-aos-delay="400">
+            <section className="max-w-[1480px] mx-auto" data-aos="fade-up" data-aos-delay="300">
                 <h2 className="text-4xl font-extrabold text-gray-900 mb-12 text-center text-purple-700">Get in Touch Directly</h2>
 
                 <div className="grid lg:grid-cols-2 gap-6 items-start">
@@ -294,7 +294,7 @@ const EnhancedSupport = () => {
                     <div
                         className="w-full h-[440px] rounded-3xl overflow-hidden shadow-xl border-4 border-purple-200"
                         data-aos="fade-left"
-                        data-aos-delay="500"
+                        data-aos-delay="300"
                     >
                         <iframe
                             title="Google Map"
